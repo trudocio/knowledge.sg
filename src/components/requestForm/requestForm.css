@@ -1,0 +1,370 @@
+.buy {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  min-width: 44px;
+}
+.closeblack24dp-1 {
+  align-items: flex-end;
+  align-self: flex-end;
+  display: flex;
+  height: 35px;
+  padding: 7.0px;
+  width: 35px;
+}
+.comments {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  width: 160px;
+}
+.email-id {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.flex-row {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 40px;
+  min-width: 569px;
+}
+.frame-1 {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 951px;
+  padding: 39px 38px;
+  width: 715px;
+}
+.make-a-request-to-us-cta {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 2.0px;
+  margin-top: 60px;
+  min-width: 235px;
+}
+.overlap-group {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-top: 40px;
+  min-width: 569px;
+  padding: 9px 17px;
+}
+.overlap-group2 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-left: 37px;
+  min-width: 395px;
+  padding: 9px 17px;
+}
+.overlap-group3 {
+  align-items: flex-start;
+  display: flex;
+  height: 139px;
+  margin-top: 40px;
+  min-width: 569px;
+  padding: 9px 17px;
+}
+.overlap-group4 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-top: 40px;
+  min-width: 569px;
+  padding: 9px 17px;
+  position: relative;
+}
+.overlap-group5 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-top: 50px;
+  min-width: 569px;
+  padding: 9px 17px;
+}
+.overlap-group6 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  min-width: 137px;
+  padding: 9px 13px;
+  position: relative;
+}
+.overlap-group8 {
+  align-items: center;
+  background-color: var(--green-pea);
+  display: flex;
+  height: 56px;
+  justify-content: flex-end;
+  min-width: 233px;
+  padding: 0 21px;
+}
+.overlap-group9 {
+  height: 21px;
+  position: relative;
+  width: 21px;
+}
+.phone {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.place {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.products {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  min-width: 121px;
+}
+.quantity {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.submit-request {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  min-width: 188px;
+}
+.text-1 {
+  letter-spacing: 2.40px;
+  margin-left: 6.0px;
+  min-height: 45px;
+  min-width: 407px;
+}
+.vector {
+  height: 1px;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  width: 1px;
+}
+.vector-1 {
+  height: 21px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 21px;
+}
+.arrowdropdownblack24dp-1 {
+  align-items: flex-end;
+  align-self: center;
+  display: flex;
+  height: 24px;
+  margin-bottom: 2.0px;
+  margin-left: 388px;
+  padding: 9px 7px;
+  width: 24px;
+}
+.arrowdropdownblack24dp-2.arrowdropdownblack24dp-1 {
+  margin-left: 39px;
+  position: relative;
+}
+.overlap-group7 {
+  height: 5px;
+  position: relative;
+  width: 10px;
+}
+.vector-2 {
+  height: 5px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 10px;
+}
+.vector-3 {
+  height: 1px;
+  left: 5px;
+  position: absolute;
+  top: 2px;
+  width: 1px;
+}
+.buy {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  min-width: 44px;
+}
+.closeblack24dp-1 {
+  align-items: flex-end;
+  align-self: flex-end;
+  display: flex;
+  height: 35px;
+  padding: 7.0px;
+  width: 35px;
+}
+.comments {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  width: 160px;
+}
+.email-id {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.flex-row {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 40px;
+  min-width: 569px;
+}
+.frame-1 {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 951px;
+  padding: 39px 38px;
+  width: 715px;
+}
+.make-a-request-to-us-cta {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 2.0px;
+  margin-top: 60px;
+  min-width: 235px;
+}
+.overlap-group {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-top: 40px;
+  min-width: 569px;
+  padding: 9px 17px;
+}
+.overlap-group2 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-left: 37px;
+  min-width: 395px;
+  padding: 9px 17px;
+}
+.overlap-group3 {
+  align-items: flex-start;
+  display: flex;
+  height: 139px;
+  margin-top: 40px;
+  min-width: 569px;
+  padding: 9px 17px;
+}
+.overlap-group4 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-top: 40px;
+  min-width: 569px;
+  padding: 9px 17px;
+  position: relative;
+}
+.overlap-group5 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  margin-top: 50px;
+  min-width: 569px;
+  padding: 9px 17px;
+}
+.overlap-group6 {
+  align-items: flex-start;
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  min-width: 137px;
+  padding: 9px 13px;
+  position: relative;
+}
+.overlap-group8 {
+  align-items: center;
+  background-color: var(--green-pea);
+  display: flex;
+  height: 56px;
+  justify-content: flex-end;
+  min-width: 233px;
+  padding: 0 21px;
+}
+.overlap-group9 {
+  height: 21px;
+  position: relative;
+  width: 21px;
+}
+.phone {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.place {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.products {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  min-width: 121px;
+}
+.quantity {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+}
+.submit-request {
+  letter-spacing: 1.60px;
+  min-height: 30px;
+  min-width: 188px;
+}
+.text-1 {
+  letter-spacing: 2.40px;
+  margin-left: 6.0px;
+  min-height: 45px;
+  min-width: 407px;
+}
+.vector {
+  height: 1px;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  width: 1px;
+}
+.vector-1 {
+  height: 21px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 21px;
+}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  box-sizing: border-box;
+}
+.border-1px-nandor {
+  border: 1px solid var(--nandor);
+}
+.poppins-medium-green-pea-20px {
+  color: var(--green-pea);
+  font-family: var(--font-family-poppins-medium);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-medium-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-poppins-medium);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+.poppins-semi-bold-green-pea-30px {
+  color: var(--green-pea);
+  font-family: var(--font-family-poppins-semibold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+:root {
+  --font-family-poppins-medium: "Poppins-Medium", Helvetica;
+  --font-family-poppins-semibold: "Poppins-SemiBold", Helvetica;
+  --font-size-l: 30px;
+  --font-size-m: 20px;
+  --green-pea: rgba(34, 90, 65, 1);
+  --nandor: rgba(76, 93, 98, 1);
+  --white: rgba(255, 255, 255, 1);
+}
