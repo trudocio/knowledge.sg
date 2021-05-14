@@ -26,7 +26,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Bree Serif",
     fontStyle: "normal",
     fontWeight: "normal",
-    fontSize: "18px",
+    [theme.breakpoints.between("xs",'sm')]: {
+      fontSize: "12px",
+    },
+    fontSize:"18px",
     color: "#292828",
   },
   activeTab: {
