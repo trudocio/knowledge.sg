@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 export default function Presence(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const screenSmall = useMediaQuery(theme.breakpoints.down("xs"));
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs","md"));
   return (
     <React.Fragment>
       <Container>
