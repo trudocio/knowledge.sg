@@ -1,93 +1,108 @@
 // External Imports
 import React from "react";
-import clsx from  'clsx';
+import clsx from "clsx";
 
 // Material Imports
-import { makeStyles } from '@material-ui/core/styles';
-import {Box, Card, CardActionArea, CardMedia, CardContent, Grid, Typography} from '@material-ui/core';
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  Box,
+  Card,
+  CardActionArea,
+  Button,
+  CardActions,
+  CardMedia,
+  CardContent,
+  Grid,
+  Typography
+} from "@material-ui/core";
 
 // Image imports
-import shipyard from '../../assets/aboutUs/shipyard.png';
+import shipyard from "../../assets/aboutUs/shipyard.png";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    borderRadius: '20px',
+    borderRadius: "20px",
+    minWidth: "250px",
+    margin:theme.spacing(2)
   },
   cardActive: {
-    backgroundColor: '#225A41',
-    color: '#fff',
+    backgroundColor: "#225A41",
+    color: "#fff",
+    minWidth: "250px",
+    margin:theme.spacing(2)
   },
   tabs: {
-    minHeight: "317px",
+    minHeight: "200px",
     display: "flex",
-    alignItems: "center",
+    alignItems: "center"
   },
   productText: {
     fontFamily: "'Poppins', serif",
-    fontStyle: 'normal',
-    fontSize: '17px',
-    marginTop: '20px',
-    marginBottom: '20px',
+    fontStyle: "normal",
+    fontSize: "17px",
+    marginTop: "20px",
+    marginBottom: "20px"
   },
   productTitle: {
-    fontWeight: '500',
-  },
-}))
+    fontWeight: "500"
+  }
+}));
 
 export default function ImageGrid(props) {
-  const { value, tabDetails, handleChange } = props
+  const { value, tabDetails, handleChange } = props;
   const classes = useStyles();
-  const getCardClass = (isActive) => {
-    return isActive ? clsx(classes.root, classes.cardActive) : classes.root
-  }
+  const getCardClass = isActive => {
+    return isActive ? clsx(classes.root, classes.cardActive) : classes.root;
+  };
 
   return (
-    <Grid
-      container
-      justify="center"
-      alignItems="center"
-      spacing={3}
-    >
-    {tabDetails().map((val, idx) => {
-      return (
-      <Grid
-        key={idx}
-        xs={12}
-        sm={3}
-        justify="center"
-        alignItems="center"
-        item
-      >
-        <Card className={getCardClass(idx === value)} onClick={(event) => {
-          handleChange(event, idx)
-        }}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              component={() => (
-                <Box
-                className={classes.tabs}
-                style={{ backgroundImage: "url(" + shipyard + ")" }}
-                />
-              )}
-            />
-            <CardContent
-              align="center"
-            >
-              <Typography 
-                gutterBottom
-                className={clsx(classes.productText, classes.productTitle)}
-                align="center"
-                component="span">
-                {val.title}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Grid>
-      )
-    })}
+    <Grid container justify="center" alignItems="center" spacing={3}>
+      {tabDetails().map((val, idx) => {
+        return (
+          <div>
+            <Grid key={idx} justify="center" alignItems="center" container item>
+              <Grid item>
+                <CardActionArea>
+                  <Card
+                    className={getCardClass(idx === value)}
+                    onClick={event => {
+                      handleChange(event, idx);
+                    }}
+                  >
+                    <CardActionArea>
+                      <CardMedia
+                        className={classes.media}
+                        component={() => (
+                          <Box
+                            className={classes.tabs}
+                            style={{
+                              backgroundImage: "url(" + shipyard + ")"
+                            }}
+                          />
+                        )}
+                      />
+                      <CardContent align="center">
+                        <Typography
+                          gutterBottom
+                          className={clsx(
+                            classes.productText,
+                            classes.productTitle
+                          )}
+                          align="center"
+                          component="span"
+                        >
+                          {val.title}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </CardActionArea>
+              </Grid>
+            </Grid>
+          </div>
+        );
+      })}
     </Grid>
-  )
+  );
 }
