@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/knowledge.sg/static/css/main.bbc10edc.chunk.css",
+    "main.js": "/knowledge.sg/static/js/main.56236b6f.chunk.js",
+    "main.js.map": "/knowledge.sg/static/js/main.56236b6f.chunk.js.map",
+    "runtime-main.js": "/knowledge.sg/static/js/runtime-main.304349e3.js",
+    "runtime-main.js.map": "/knowledge.sg/static/js/runtime-main.304349e3.js.map",
+    "static/js/2.14db8a2a.chunk.js": "/knowledge.sg/static/js/2.14db8a2a.chunk.js",
+    "static/js/2.14db8a2a.chunk.js.map": "/knowledge.sg/static/js/2.14db8a2a.chunk.js.map",
+    "index.html": "/knowledge.sg/index.html",
+    "static/css/main.bbc10edc.chunk.css.map": "/knowledge.sg/static/css/main.bbc10edc.chunk.css.map",
+    "static/js/2.14db8a2a.chunk.js.LICENSE.txt": "/knowledge.sg/static/js/2.14db8a2a.chunk.js.LICENSE.txt",
+    "static/media/business_coal.14bd4e7b.png": "/knowledge.sg/static/media/business_coal.14bd4e7b.png",
+    "static/media/coalCalculator.e337b356.svg": "/knowledge.sg/static/media/coalCalculator.e337b356.svg",
+    "static/media/experience.2281b670.svg": "/knowledge.sg/static/media/experience.2281b670.svg",
+    "static/media/logo.db5725c5.png": "/knowledge.sg/static/media/logo.db5725c5.png",
+    "static/media/management.6464e291.png": "/knowledge.sg/static/media/management.6464e291.png",
+    "static/media/presence_map.c67ebb51.svg": "/knowledge.sg/static/media/presence_map.c67ebb51.svg",
+    "static/media/services.9b80d388.svg": "/knowledge.sg/static/media/services.9b80d388.svg",
+    "static/media/shipyard.a143bed0.png": "/knowledge.sg/static/media/shipyard.a143bed0.png",
+    "static/media/solutions.ba85e692.svg": "/knowledge.sg/static/media/solutions.ba85e692.svg",
+    "static/media/speciality.83a5d343.svg": "/knowledge.sg/static/media/speciality.83a5d343.svg",
+    "static/media/systems.17bc0918.svg": "/knowledge.sg/static/media/systems.17bc0918.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.304349e3.js",
+    "static/js/2.14db8a2a.chunk.js",
+    "static/css/main.bbc10edc.chunk.css",
+    "static/js/main.56236b6f.chunk.js"
+  ]
+}
