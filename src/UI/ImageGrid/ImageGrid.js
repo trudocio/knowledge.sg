@@ -8,8 +8,6 @@ import {
   Box,
   Card,
   CardActionArea,
-  Button,
-  CardActions,
   CardMedia,
   CardContent,
   Grid,

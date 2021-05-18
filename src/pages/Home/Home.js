@@ -6,8 +6,6 @@ import SwipeableViews from "react-swipeable-views";
 // Material Imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
-  Typography,
-  Box,
   useScrollTrigger,
   Zoom,
   Fab

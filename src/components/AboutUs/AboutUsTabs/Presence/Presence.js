@@ -1,10 +1,9 @@
 // External imports
 import React from "react";
-import clsx from "clsx";
 
 // Material imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Container, Typography, Grid, Box } from "@material-ui/core";
+import { Container, Typography, Grid, } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 
 // Internal imports

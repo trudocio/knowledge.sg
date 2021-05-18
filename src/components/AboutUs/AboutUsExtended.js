@@ -6,9 +6,6 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import arrowDown from "../../assets/ArrowDown.svg";
-import arrowUp from "../../assets/ArrowUp.svg";
-
 // Material Imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {

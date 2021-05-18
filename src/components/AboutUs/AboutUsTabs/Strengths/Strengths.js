@@ -1,10 +1,9 @@
 // External imports
 import React from "react";
-import clsx from "clsx";
 
 // Material imports
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid, Box } from "@material-ui/core";
+import { Container, Typography, Grid, } from "@material-ui/core";
 
 // Internal imports
 import experience from "../../../../assets/aboutUs/strengths/experience.svg";
