@@ -1,17 +1,32 @@
 import React, { Component } from "react";
 // import logo from "./logo.svg";
+import Home from "./pages/Home"
 import "./App.css";
-import { BrowserRouter} from "react-router-dom";
-import Home from "./pages/Home";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  // Redirect,
+} from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
-          <Home />
+          {/* <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">Simple React App</h1>
+          </header> */}
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Home />}
+            />
+          </Switch>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

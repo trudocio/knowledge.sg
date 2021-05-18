@@ -3,7 +3,7 @@ import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import Box from "@material-ui/core/Box";
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from "@material-ui/icons/Close";
 // Material Imports
 import {
   AppBar,
@@ -227,7 +227,7 @@ export function NavBar(props) {
             }}
             key={text}
             onClick={() => {
-              other.onChange(index);
+              other.onChange(text, index);
               handleClick();
             }}
           >
