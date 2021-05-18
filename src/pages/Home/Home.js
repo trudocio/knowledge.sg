@@ -82,7 +82,7 @@ export default function Home(props) {
       setValue(index);
     };
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (newValue) => {
       setValue(newValue);
     };
 

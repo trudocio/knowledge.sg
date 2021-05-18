@@ -26,11 +26,11 @@ const useStyles = makeStyles(theme => ({
   },
   footerIcon: {
     fontSize: "64px",
-    color: "#fff",
+    color: "#ffffff",
     marginRight: theme.spacing(2)
   },
   footerText: {
-    color: "#fff",
+    color: "#ffffff",
     fontFamily: "'Poppins', serif",
     fontStyle: "normal"
   }

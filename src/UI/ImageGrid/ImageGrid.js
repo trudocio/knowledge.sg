@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   cardActive: {
     backgroundColor: "#225A41",
-    color: "#fff",
+    color: "#ffffff",
     minWidth: "250px",
     margin:theme.spacing(2)
   },

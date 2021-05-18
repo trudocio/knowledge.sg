@@ -15,6 +15,7 @@ import shipyard from '../../assets/aboutUs/shipyard.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor:"#ffffff"
   },
   heroText: {
     fontFamily: "'Poppins', serif",

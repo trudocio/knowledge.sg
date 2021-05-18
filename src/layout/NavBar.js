@@ -3,6 +3,7 @@ import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import Box from "@material-ui/core/Box";
+import CloseIcon from '@material-ui/icons/Close';
 // Material Imports
 import {
   AppBar,
@@ -20,16 +21,20 @@ import {
   IconButton,
   Hidden,
   Drawer
-  // Slide,
 } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { MoveToInbox, Mail, Menu } from "@material-ui/icons";
+import { Menu } from "@material-ui/icons";
 // Image Imports
 import logo from "../assets/logo.png";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
+  },
+  rootList: {
+    width: "100%",
+    maxWidth: "36ch",
+    backgroundColor: theme.palette.background.paper
   },
   menuButton: {
     position: "absolute",
@@ -38,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     alignItems: "center",
-    paddingTop: theme.spacing(1),
+    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(2)
   },
   title: {
@@ -108,12 +113,31 @@ const useStyles = makeStyles(theme => ({
     width: "290px",
     height: "137.94px"
   },
+  inline: {
+    fontSize: "15px",
+    color: "#292828",
+    textAlign: "center",
+    fontFamily: "'Poppins', serif"
+    // marginLeft: theme.spacing(4)
+  },
+  inlineContainer: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center"
+  },
   logoSmall: {
     [theme.breakpoints.only("xs")]: {
       paddingTop: theme.spacing(2)
     },
     width: "290px",
     height: "137.94px"
+  },
+  logoDrawer: {
+    [theme.breakpoints.only("xs")]: {
+      paddingTop: theme.spacing(2)
+    },
+    width: "95px",
+    height: "45px"
   }
 }));
 
@@ -172,35 +196,59 @@ export function NavBar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const handleClick = () => {
+    setMobileOpen(!mobileOpen);
+  };
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-      <Divider />
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <img
+          className={classes.logoDrawer}
+          src={logo}
+          alt="Knowledge Global Singapore Logo"
+        />
+      </Box>
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <MoveToInbox /> : <Mail />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <MoveToInbox /> : <Mail />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+        {[
+          "ABOUT US",
+          "PRODUCTS",
+          "SHIPPING",
+          "CSR",
+          "RECOGNITIONS",
+          "KNOWLEDGE SHARING",
+          "CONTACT US"
+        ].map((text, index) => (
+          <ListItem
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              textAlign: "center"
+            }}
+            key={text}
+            onClick={() => {
+              other.onChange(index);
+              handleClick();
+            }}
+          >
+            <ListItemText
+              primary={
+                <React.Fragment>
+                  <Typography
+                    align="center"
+                    component="span"
+                    className={classes.inline}
+                  >
+                    {text}
+                  </Typography>
+                </React.Fragment>
+              }
+            />
           </ListItem>
         ))}
       </List>
     </div>
   );
-
   const container =
     window !== undefined ? () => window.document.body : undefined;
 
@@ -215,7 +263,6 @@ export function NavBar(props) {
           </Toolbar>
         </Hidden>
         <CssBaseline />
-        {/* <ElevationScroll {...props}> */}
         <AppBar position="static" color="transparent" elevation={0}>
           <Hidden mdUp implementation="css">
             <IconButton
@@ -263,7 +310,7 @@ export function NavBar(props) {
                 onChange={other.onChange}
                 centered={true}
                 scrollButtons={"desktop"}
-                indicatorColor={"#fff"}
+                indicatorColor={"#ffffff"}
               >
                 <Tab
                   className={getTabClass(value === 0)}
@@ -326,6 +373,15 @@ export function NavBar(props) {
                 keepMounted: true // Better open performance on mobile.
               }}
             >
+              <IconButton
+                color="inherit"
+                aria-label="close drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                className={classes.menuButton}
+              >
+                <CloseIcon />
+              </IconButton>
               {drawer}
             </Drawer>
           </Hidden>
