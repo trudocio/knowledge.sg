@@ -45,7 +45,7 @@ export function Footer(props) {
           <Grid container justify="center" spacing={3}>
             {[0, 1, 2].map(value => (
               <Grid key={value} item>
-                <Paper className={classes.root}>
+                <Paper className={classes.root} elevation={0}>
                   {value === 0 ? (
                     <Grid
                       className={classes.footerNestedGrid}
