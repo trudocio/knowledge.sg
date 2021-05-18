@@ -4,7 +4,7 @@ import clsx from  'clsx';
 
 // Material Imports
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Box, Grid, Typography, Container, IconButton } from '@material-ui/core';
+import { Grid, Typography, Container } from '@material-ui/core';
 
 // Internal Imports
 import { Calculators, HeroImage } from "../../UI"
@@ -15,6 +15,7 @@ import shipyard from '../../assets/aboutUs/shipyard.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor:"#ffffff"
   },
   heroText: {
     fontFamily: "'Poppins', serif",

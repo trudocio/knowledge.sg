@@ -1,6 +1,5 @@
 // External Imports
 import React from "react";
-import clsx from  'clsx';
 
 // Material Imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -89,7 +88,6 @@ const tabDetails = () => {
 
 export default function Products(props) {
   const { children } = props;
-  const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
