@@ -7,14 +7,15 @@ import Grid from "@material-ui/core/Grid";
 import { Call, Place, Email } from "@material-ui/icons";
 const useStyles = makeStyles(theme => ({
   root: {
-    ...theme.mixins.gutters(),
+    // ...theme.mixins.gutters(),
     backgroundColor: "#1C2325",
-    paddingTop: theme.spacing.unit * 2,
+    paddingTop: theme.spacing.unit * 3,
     paddingBottom: theme.spacing.unit * 2
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
-    minHeight: "240px"
+    minHeight: "240px",
+    marginLeft:"-40px"
   },
   footerGrid: {
     height: "100%",

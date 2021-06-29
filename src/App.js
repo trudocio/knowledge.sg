@@ -13,11 +13,7 @@ class App extends Component {
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        <div className="App">
-          {/* <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Simple React App</h1>
-          </header> */}
+        <div style={{backgroundColor: "#ffffff"}}>
           <Switch>
             <Route
               exact

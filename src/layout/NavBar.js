@@ -24,7 +24,7 @@ import { useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Menu } from "@material-ui/icons";
 // Image Imports
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1

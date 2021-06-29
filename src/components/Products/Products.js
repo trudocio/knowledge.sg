@@ -4,7 +4,10 @@ import React from "react";
 // Material Imports
 import { makeStyles } from '@material-ui/core/styles';
 import { Container} from '@material-ui/core';
-
+import baseMetals from '../../assets/products/baseMetals.svg';
+import energy from '../../assets/products/energy.svg';
+import minerals from '../../assets/products/minerals.svg';
+import giri from '../../assets/products/giri.svg';
 // Internal Imports
 import { ImageGrid, LinedText, Calculators } from "../../UI"
 
@@ -48,7 +51,7 @@ const tabDetails = () => {
   return [
     { 
       title: 'ENERGY',
-      image_src: '',
+      image_src: energy,
       content: [{ 
         heading: 'Thermal Coal', 
         content: 'Thermal coal (also known as steam coal) is a grade between bituminous coal and anthracite, once widely used as a fuel for steam locomotives. It is a grade of coal used in electric power plants to generate steam to create electricity. It can be used to fire power plants that produce steam for electricity and industrial uses.'
@@ -60,7 +63,7 @@ const tabDetails = () => {
     },
     { 
       title: 'BASE METAL',
-      image_src: '',
+      image_src: baseMetals,
       content: [{ 
         heading: 'Base Metals', 
         content: 'Base metals are common metals that tarnish, oxidize, or corrode relatively quickly when exposed to air or moisture. They are widely used in commercial and industrial applications, such as construction and manufacturing. Base metals include copper, lead, nickel, aluminium and zinc. They are often more abundant in nature and easier to mine which makes base metals far less expensive for use in manufacturing than precious metals, such as gold, silver, and platinum.'
@@ -68,7 +71,7 @@ const tabDetails = () => {
     },
     { 
       title: 'MINERALS & ORES',
-      image_src: '',
+      image_src: minerals,
       content: [{ 
         heading: 'Base Metals', 
         content: 'Base metals are common metals that tarnish, oxidize, or corrode relatively quickly when exposed to air or moisture. They are widely used in commercial and industrial applications, such as construction and manufacturing. Base metals include copper, lead, nickel, aluminium and zinc. They are often more abundant in nature and easier to mine which makes base metals far less expensive for use in manufacturing than precious metals, such as gold, silver, and platinum.'
@@ -76,7 +79,7 @@ const tabDetails = () => {
     },
     { 
       title: 'SOFTS & AGRI',
-      image_src: '',
+      image_src: giri,
       content: [{ 
         heading: 'Base Metals', 
         content: 'Base metals are common metals that tarnish, oxidize, or corrode relatively quickly when exposed to air or moisture. They are widely used in commercial and industrial applications, such as construction and manufacturing. Base metals include copper, lead, nickel, aluminium and zinc. They are often more abundant in nature and easier to mine which makes base metals far less expensive for use in manufacturing than precious metals, such as gold, silver, and platinum.'
