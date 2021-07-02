@@ -5,13 +5,9 @@ import SwipeableViews from "react-swipeable-views";
 
 // Material Imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  useScrollTrigger,
-  Zoom,
-  Fab
-} from "@material-ui/core";
+import { useScrollTrigger, Zoom, Fab, Box } from "@material-ui/core";
 import { KeyboardArrowUp } from "@material-ui/icons";
-
+import sections from "../../components/KnowledgeSharing/glossary.js";
 // Internal Imports
 import { NavBar, Footer } from "../../layout";
 import {
@@ -19,29 +15,30 @@ import {
   AboutUsExtended,
   Products,
   Shipping,
-  Csr
+  Csr,
+  KnowledgeSharing,
 } from "../../components";
 import { TabPanel } from "../../UI";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   scrollToTop: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2)
+    right: theme.spacing(2),
   },
   fabRoot: {
     backgroundColor: "transparent",
     boxShadow: "unset",
     borderStyle: "solid",
     borderWidth: "2px",
-    borderColor: "#225A41"
+    borderColor: "#225A41",
   },
   fabIcon: {
-    color: "#225A41"
-  }
+    color: "#225A41",
+  },
 }));
 
 function ScrollTop(props) {
@@ -53,10 +50,10 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 10
+    threshold: 10,
   });
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
     );
@@ -85,7 +82,7 @@ ScrollTop.propTypes = {
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
    */
-  window: PropTypes.func
+  window: PropTypes.func,
 };
 
 export default function Home(props) {
@@ -93,7 +90,7 @@ export default function Home(props) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
-  const handleChangeIndex = index => {
+  const handleChangeIndex = (index) => {
     setValue(index);
   };
 
@@ -103,7 +100,38 @@ export default function Home(props) {
 
   return (
     <React.Fragment>
+      {value === 6 && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            backgroundColor: theme.palette.background.paper,
+            width: "100%",
+            zIndex: 10000,
+          }}
+        >
+          <Footer />
+        </div>
+      )}
       <NavBar value={value} onChange={handleChange} />
+      {value === 6 && (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            marginBottom: "20px",
+            justifyContent: "space-around",
+          }}
+        >
+          {sections.map((item, i) => {
+            return (
+              <div onClick={() => window.location.replace(`#${item.title}`)}>
+                <span>{item.title}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
@@ -123,6 +151,15 @@ export default function Home(props) {
         <TabPanel value={value} index={3} dir={theme.direction}>
           <Csr />
         </TabPanel>
+        <TabPanel value={value} index={4} dir={theme.direction}>
+          {/* <Csr /> */}
+        </TabPanel>
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          {/* <Csr /> */}
+        </TabPanel>
+        <TabPanel value={value} index={6} dir={theme.direction}>
+          <KnowledgeSharing />
+        </TabPanel>
       </SwipeableViews>
       <ScrollTop {...props}>
         <Fab
@@ -134,7 +171,7 @@ export default function Home(props) {
           <KeyboardArrowUp className={classes.fabIcon} fontSize="large" />
         </Fab>
       </ScrollTop>
-      <Footer />
+      {value !== 6 && <Footer />}
     </React.Fragment>
   );
 }

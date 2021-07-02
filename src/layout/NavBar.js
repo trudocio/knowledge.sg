@@ -18,31 +18,31 @@ import {
   ListItemText,
   IconButton,
   Hidden,
-  Drawer
+  Drawer,
 } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Menu } from "@material-ui/icons";
 // Image Imports
 import logo from "../assets/logo.svg";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   rootList: {
     width: "100%",
     maxWidth: "36ch",
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
   },
   menuButton: {
     position: "absolute",
     top: "8px",
-    left: "10px"
+    left: "10px",
   },
   toolbar: {
     alignItems: "center",
     paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
@@ -58,25 +58,25 @@ const useStyles = makeStyles(theme => ({
     letterSpacing: "0.2em",
     color: "#292828",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "15px"
+      fontSize: "15px",
     },
     [theme.breakpoints.only("md")]: {
-      fontSize: "18px"
+      fontSize: "18px",
     },
     [theme.breakpoints.between("lg", "xl")]: {
-      fontSize: "24px"
-    }
+      fontSize: "24px",
+    },
   },
   tab: {
     [theme.breakpoints.down("sm")]: {
-      width: "100%"
+      width: "100%",
     },
     [theme.breakpoints.only("md")]: {
-      width: "100%"
+      width: "100%",
     },
     [theme.breakpoints.between("lg", "xl")]: {
-      width: "100%"
-    }
+      width: "100%",
+    },
   },
   tabLabels: {
     fontFamily: "'Poppins', serif",
@@ -88,55 +88,55 @@ const useStyles = makeStyles(theme => ({
     color: "#000000",
     opacity: "unset",
     minWidth: "100px",
-    fontSize: "16px"
+    fontSize: "16px",
   },
   activeTab: {
-    color: "#225A41"
+    color: "#225A41",
   },
   line: {
     border: "1px solid #000000",
-    width: "85%"
+    width: "85%",
   },
   lineTop: {
     position: "relative",
     top: "50px",
-    zIndex: "-1"
+    zIndex: "-1",
   },
   lineBottom: {
     position: "relative",
     bottom: "50px",
-    zIndex: "-1"
+    zIndex: "-1",
   },
   logo: {
     width: "290px",
-    height: "137.94px"
+    height: "137.94px",
   },
   inline: {
     fontSize: "15px",
     color: "#292828",
     textAlign: "center",
-    fontFamily: "'Poppins', serif"
+    fontFamily: "'Poppins', serif",
     // marginLeft: theme.spacing(4)
   },
   inlineContainer: {
     width: "100%",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   logoSmall: {
     [theme.breakpoints.only("xs")]: {
-      paddingTop: theme.spacing(2)
+      paddingTop: theme.spacing(2),
     },
     width: "290px",
-    height: "137.94px"
+    height: "137.94px",
   },
   logoDrawer: {
     [theme.breakpoints.only("xs")]: {
-      paddingTop: theme.spacing(2)
+      paddingTop: theme.spacing(2),
     },
     width: "95px",
-    height: "45px"
-  }
+    height: "45px",
+  },
 }));
 
 // function HideOnScroll(props) {
@@ -161,11 +161,11 @@ function ElevationScroll(props) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
-    target: window ? window() : undefined
+    target: window ? window() : undefined,
   });
 
   return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0
+    elevation: trigger ? 4 : 0,
   });
 }
 
@@ -175,7 +175,7 @@ ElevationScroll.propTypes = {
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
    */
-  window: PropTypes.func
+  window: PropTypes.func,
 };
 
 export function NavBar(props) {
@@ -185,7 +185,7 @@ export function NavBar(props) {
   const { children, value, index, ...other } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const screenMedium = useMediaQuery(theme.breakpoints.only("md"));
-  const getTabClass = isActive => {
+  const getTabClass = (isActive) => {
     return isActive
       ? clsx(classes.tabLabels, classes.activeTab)
       : classes.tabLabels;
@@ -215,13 +215,13 @@ export function NavBar(props) {
           "CSR",
           "RECOGNITIONS",
           "KNOWLEDGE SHARING",
-          "CONTACT US"
+          "CONTACT US",
         ].map((text, index) => (
           <ListItem
             style={{
               display: "flex",
               justifyContent: "center",
-              textAlign: "center"
+              textAlign: "center",
             }}
             key={text}
             onClick={() => {
@@ -365,10 +365,10 @@ export function NavBar(props) {
               open={mobileOpen}
               onClose={handleDrawerToggle}
               classes={{
-                paper: classes.drawerPaper
+                paper: classes.drawerPaper,
               }}
               ModalProps={{
-                keepMounted: true // Better open performance on mobile.
+                keepMounted: true, // Better open performance on mobile.
               }}
             >
               <IconButton
