@@ -5,9 +5,15 @@ import SwipeableViews from "react-swipeable-views";
 
 // Material Imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { useScrollTrigger, Zoom, Fab, Box } from "@material-ui/core";
+import {
+  useScrollTrigger,
+  Zoom,
+  Fab,
+  Box,
+  useMediaQuery,
+} from "@material-ui/core";
 import { KeyboardArrowUp } from "@material-ui/icons";
-import sections from "../../components/KnowledgeSharing/glossary.js";
+import Knowledge from "../../components/Knowledge.js";
 // Internal Imports
 import { NavBar, Footer } from "../../layout";
 import {
@@ -89,7 +95,7 @@ export default function Home(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
-
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   const handleChangeIndex = (index) => {
     setValue(index);
   };
@@ -100,38 +106,28 @@ export default function Home(props) {
 
   return (
     <React.Fragment>
-      {value === 6 && (
+      {!screenSmall && value === 6 ? (
         <div
           style={{
             position: "absolute",
             bottom: 0,
             backgroundColor: theme.palette.background.paper,
             width: "100%",
-            zIndex: 10000,
           }}
         >
           <Footer />
         </div>
-      )}
-      <NavBar value={value} onChange={handleChange} />
-      {value === 6 && (
+      ) : (
         <div
           style={{
-            display: "flex",
+            flex: 1,
+            backgroundColor: "#ffffff",
             width: "100%",
-            marginBottom: "20px",
-            justifyContent: "space-around",
           }}
-        >
-          {sections.map((item, i) => {
-            return (
-              <div onClick={() => window.location.replace(`#${item.title}`)}>
-                <span>{item.title}</span>
-              </div>
-            );
-          })}
-        </div>
+        ></div>
       )}
+      <NavBar value={value} onChange={handleChange} />
+      {value === 6 && <Knowledge></Knowledge>}
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}

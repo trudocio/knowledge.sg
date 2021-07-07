@@ -2,8 +2,14 @@
 import React from "react";
 
 // Material Imports
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Box, Typography, Divider } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {
+  Container,
+  Box,
+  Typography,
+  Divider,
+  useMediaQuery,
+} from "@material-ui/core";
 import ReactSectionList from "react-sectionlist";
 import sections from "./glossary.js";
 import Paper from "@material-ui/core/Paper";
@@ -12,11 +18,13 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-
+import clsx from "clsx";
+import SwipeableViews from "react-swipeable-views";
 const useStyles = makeStyles((theme) => ({
   scroll: {
     height: "200px",
-    // backgroundColor: "#000000",
+    width: "600px",
+    flexGrow: 1,
     marginBottom: "10px",
   },
   tableHead: {
@@ -28,10 +36,23 @@ const useStyles = makeStyles((theme) => ({
 const keyExtractor = (item, index) => item.title + index;
 export default function KnowledgeSharing(props) {
   const classes = useStyles();
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const getTabClass = (isActive) => {
+    return isActive ? clsx(classes.tab, classes.activeTab) : classes.tab;
+  };
   const renderSectionHeader = (item, index) => {
     return (
-      <Box className={classes.background}>
-        <Typography id={item.title} className={classes.tableHead}>
+      <Box>
+        <Typography
+          align="center"
+          id={item.title}
+          className={classes.tableHead}
+        >
           {item.title}
         </Typography>
       </Box>
@@ -39,45 +60,64 @@ export default function KnowledgeSharing(props) {
   };
   const renderItem = (item, index) => {
     return (
-      <Box>
-        <Box display="flex">
-          <Box style={{ width: "400px" }}>
-            <Typography>{item.heading}</Typography>
-          </Box>
-          <Box>
-            <Typography>{item.subHeading}</Typography>
-          </Box>
+      <Box display="flex">
+        <Box
+          style={{
+            width: "400px",
+            alignItems: "center",
+            fontSize: "12px",
+            justifyContent: "center",
+          }}
+        >
+          <Typography
+            style={{
+              width: "200px",
+              fontSize: "14px",
+              fontWeight: "400",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {item.heading}
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            style={{
+              width: "200px",
+              fontSize: "12px",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            align="left"
+          >
+            {item.subHeading}
+          </Typography>
         </Box>
       </Box>
     );
   };
   return (
     <React.Fragment>
-      {/* <Box
+      <Box
         style={{
-          width: "100%",
-          justifyContent: "space-between",
+          flex: 1,
+          marginLeft: "50%",
+          marginTop: screenSmall ? "55%" : "5%",
+          backgroundColor: "#ffffff",
+          zIndex: 10000,
+          transform: "translate(-50%, -50%)",
         }}
-        display="flex"
+        justifyContent="center"
+        className={!screenSmall && classes.scroll}
       >
-        {sections.map((item, i) => {
-          return (
-            <div onClick={() => window.location.replace(`#${item.title}`)}>
-              <span className={classes.link}>{item.title}</span>
-            </div>
-          );
-        })}
-      </Box> */}
-      <Container>
-        <Box className={classes.scroll}>
-          <ReactSectionList
-            keyExtractor={keyExtractor}
-            renderSectionHeader={renderSectionHeader}
-            renderItem={renderItem}
-            sections={sections}
-          />
-        </Box>
-      </Container>
+        <ReactSectionList
+          keyExtractor={keyExtractor}
+          renderSectionHeader={renderSectionHeader}
+          renderItem={renderItem}
+          sections={sections}
+        />
+      </Box>
     </React.Fragment>
   );
 }

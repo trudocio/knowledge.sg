@@ -46,6 +46,19 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
   },
+  button: {
+    width: "233px",
+    height: "56px",
+    alignItems: "center",
+    marginLeft: "50%",
+    marginTop: "40px",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "#225A41",
+  },
+  buttonText: {
+    color: "#ffffff",
+    fontSize: "20px",
+  },
   input: {
     width: "569px",
     "&:before": {
@@ -61,8 +74,25 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:after": {
       borderColor: "#225A41",
+      backgroundColor: "#ffffff",
     },
     width: "569px",
+  },
+  selectInner: {
+    "&:before": {
+      borderColor: "#225A41",
+    },
+    "&:after": {
+      borderColor: "#225A41",
+      backgroundColor: "#ffffff",
+    },
+    root: {
+      "&$selected": {
+        backgroundColor: "orange",
+      },
+    },
+    width: "200px",
+    marginRight: "20px",
   },
   root: {
     marginBottom: "20px",
@@ -197,6 +227,7 @@ export default function Calculators(props) {
                 PRODUCTS
               </InputLabel>
               <Select
+                style={{ backgroundColor: "#ffffff" }}
                 labelId="demo-simple-select-outlined-label"
                 id="demo-simple-select-outlined"
                 label="PRODUCTS"
@@ -211,9 +242,9 @@ export default function Calculators(props) {
                 displayEmpty
                 className={classes.select}
               >
-                <MenuItem value="">
+                {/* <MenuItem value="">
                   <em></em>
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem value={1}>Products</MenuItem>
                 <MenuItem value={2}>Energy</MenuItem>
                 <MenuItem value={3}>Base Metals</MenuItem>
@@ -222,8 +253,29 @@ export default function Calculators(props) {
               </Select>
             </FormControl>
             <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="outlined-basic" label="BUY" variant="outlined" />
+              <FormControl variant="outlined" className={classes.Innerroot}>
+                <InputLabel id="demo-simple-select-outlined-label">
+                  BUY
+                </InputLabel>
+                <Select
+                  style={{ backgroundColor: "#ffffff" }}
+                  labelId="demo-simple-select-outlined-label"
+                  id="demo-simple-select-outlined"
+                  label="BUY"
+                  value={products}
+                  input={
+                    <OutlinedInput label="BUY" classes={outlinedInputClasses} />
+                  }
+                  onChange={handleChange}
+                  displayEmpty
+                  className={classes.selectInner}
+                >
+                  <MenuItem value={1}>Buy</MenuItem>
+                  <MenuItem value={2}>Sell</MenuItem>
+                </Select>
+              </FormControl>
               <TextField
+                className={classes.selectInner}
                 id="outlined-basic"
                 label="QUANTITY"
                 variant="outlined"
@@ -237,6 +289,12 @@ export default function Calculators(props) {
                 variant="outlined"
               />
             </form>
+            <Button
+              onClick={handleClose}
+              className={clsx(classes.buttonText, classes.button)}
+            >
+              SUBMIT REQUEST
+            </Button>
           </div>
         </Fade>
       </Modal>
