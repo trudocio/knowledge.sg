@@ -106,26 +106,6 @@ export default function Home(props) {
 
   return (
     <React.Fragment>
-      {!screenSmall && value === 6 ? (
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            backgroundColor: theme.palette.background.paper,
-            width: "100%",
-          }}
-        >
-          <Footer />
-        </div>
-      ) : (
-        <div
-          style={{
-            flex: 1,
-            backgroundColor: "#ffffff",
-            width: "100%",
-          }}
-        ></div>
-      )}
       <NavBar value={value} onChange={handleChange} />
       {value === 6 && <Knowledge></Knowledge>}
       <SwipeableViews
@@ -167,7 +147,10 @@ export default function Home(props) {
           <KeyboardArrowUp className={classes.fabIcon} fontSize="large" />
         </Fab>
       </ScrollTop>
-      {value !== 6 && <Footer />}
+      {value === 6 && (
+        <div style={{ height: "20px", backgroundColor: "#ffffff" }}></div>
+      )}
+      <Footer />
     </React.Fragment>
   );
 }

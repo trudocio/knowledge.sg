@@ -88,19 +88,19 @@ export default function Products(props) {
             alignItems="center"
             item
           >
-            <Typography
+            {/* <Typography
               className={classes.heroText}
               component="p"
               align="center">
                 Knowledge International Strategy Systems (KISS) was incorporated in 2010 with a view to build on the Group’s knowledge, resources and network in coal business and to leverage Singapore’s pro-business policies and deep financial, trading and shipping ecosystem. As a Global Trader Program (GTP) member trader in Singapore, KISS has benefitted from proximity to Indonesia and Australia.
-            </Typography>
-
+            </Typography> */}
+{/* 
             <Typography
               className={classes.heroText}
               component="p"
               align="center">
                 In the past few years, KISS has built a fairly diversified business both in terms of markets and products in addition to the legacy of being a highly -successful merchant coal trading company with expertise in energy coal origination, land-based and seaborne logistics, related trade finance and risk management.
-            </Typography>
+            </Typography> */}
           </Grid>
           <Grid
             key={2}

@@ -22,13 +22,11 @@ import clsx from "clsx";
 import SwipeableViews from "react-swipeable-views";
 const useStyles = makeStyles((theme) => ({
   scroll: {
-    height: "200px",
+    height: "30vh",
     width: "600px",
-    flexGrow: 1,
-    marginBottom: "10px",
   },
   tableHead: {
-    color: "#000000",
+    color: "#225A41",
     fontWeight: "bold",
   },
   link: {},
@@ -98,18 +96,15 @@ export default function KnowledgeSharing(props) {
     );
   };
   return (
-    <React.Fragment>
+    <Box>
       <Box
         style={{
-          flex: 1,
           marginLeft: "50%",
-          marginTop: screenSmall ? "55%" : "5%",
+          marginTop: screenSmall ? "55%" : "7%",
           backgroundColor: "#ffffff",
-          zIndex: 10000,
           transform: "translate(-50%, -50%)",
         }}
-        justifyContent="center"
-        className={!screenSmall && classes.scroll}
+        className={classes.scroll}
       >
         <ReactSectionList
           keyExtractor={keyExtractor}
@@ -118,6 +113,6 @@ export default function KnowledgeSharing(props) {
           sections={sections}
         />
       </Box>
-    </React.Fragment>
+    </Box>
   );
 }

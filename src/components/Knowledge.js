@@ -133,7 +133,7 @@ export default function Knowledge(props) {
               <div onClick={() => window.location.replace(`#${item.title}`)}>
                 <span
                   style={{
-                    color: "blue",
+                    color: "#225A41",
                     textDecoration: "underline",
                     cursor: "pointer",
                   }}

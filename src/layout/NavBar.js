@@ -11,6 +11,7 @@ import {
   Tabs,
   Tab,
   Typography,
+  Divider,
   useScrollTrigger,
   CssBaseline,
   List,
@@ -96,6 +97,9 @@ const useStyles = makeStyles((theme) => ({
   line: {
     border: "1px solid #000000",
     width: "85%",
+    alignSelf: "center",
+    marginLeft: "50%",
+    transform: "translate(-50%, -50%)",
   },
   lineTop: {
     position: "relative",
@@ -303,6 +307,7 @@ export function NavBar(props) {
           <Hidden mdDown implementation="css">
             <div>
               <hr className={clsx(classes.line, classes.lineTop)} />
+              {/* <div className={classes.line}></div> */}
               <Tabs
                 value={value}
                 onChange={other.onChange}
@@ -352,6 +357,7 @@ export function NavBar(props) {
                   disableRipple={true}
                 />
               </Tabs>
+              {/* <div className={classes.line}></div> */}
               <hr className={clsx(classes.line, classes.lineBottom)} />
             </div>
           </Hidden>
