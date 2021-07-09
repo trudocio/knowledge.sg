@@ -13,8 +13,10 @@ import {
   Divider,
 } from "@material-ui/core";
 import clsx from "clsx";
-import Paper from "@material-ui/core/Paper";
 import SwipeableViews from "react-swipeable-views";
+import Paper from "@material-ui/core/Paper";
+import { KnowledgeSharing, CoalGlossary, SwiftField } from "../components";
+import { TabPanel } from "../UI";
 const useStyles = makeStyles((theme) => ({
   tab: {
     borderRight: "1px solid #000000",
@@ -67,6 +69,10 @@ export default function Knowledge(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
+
   const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   const getTabClass = (isActive) => {
     return isActive ? clsx(classes.tab, classes.activeTab) : classes.tab;
@@ -98,56 +104,85 @@ export default function Knowledge(props) {
           <hr className={classes.line2} />
         </Grid>
       </Container>
-      <Typography
-        style={{
-          display: "flex",
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          marginTop: "45px",
-          color: "#000000",
-          fontSize: 17,
-          marginLeft: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        CHARTERING ABBREVATIONS- TERMS & DEFINITIONS
-      </Typography>
-      <Container>
-        <Divider
-          style={{ width: "90%", position: "relative", alignSelf: "center" }}
-        />
-        <div
-          style={{
-            display: "flex",
-            width: "811px",
-            flex: 1,
-            justifyContent: "space-around",
-            marginLeft: "50%",
-            marginTop: "2%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          {sections.map((item, i) => {
-            return (
-              <div onClick={() => window.location.replace(`#${item.title}`)}>
-                <span
-                  style={{
-                    color: "#225A41",
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                  }}
-                >
-                  {item.title}
-                </span>
-              </div>
-            );
-          })}
+      {value === 1 && (
+        <div>
+          <Typography
+            style={{
+              display: "flex",
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "45px",
+              color: "#000000",
+              fontSize: 17,
+              marginLeft: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            CHARTERING ABBREVATIONS- TERMS & DEFINITIONS
+          </Typography>
+          <Container>
+            <Divider
+              style={{
+                width: "90%",
+                position: "relative",
+                alignSelf: "center",
+              }}
+            />
+            <div
+              style={{
+                display: "flex",
+                width: "811px",
+                flex: 1,
+                justifyContent: "space-around",
+                marginLeft: "50%",
+                marginTop: "2%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              {sections.map((item, i) => {
+                return (
+                  <div
+                    onClick={() => window.location.replace(`#${item.title}`)}
+                  >
+                    <span
+                      style={{
+                        color: "#225A41",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {item.title}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+            <Divider
+              style={{
+                width: "90%",
+                position: "relative",
+                alignSelf: "center",
+              }}
+            />
+          </Container>
         </div>
-        <Divider
-          style={{ width: "90%", position: "relative", alignSelf: "center" }}
-        />
-      </Container>
+      )}
+      <SwipeableViews
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={value}
+        onChangeIndex={handleChangeIndex}
+      >
+        <TabPanel value={0} index={0} dir={theme.direction}>
+         <CoalGlossary />
+        </TabPanel>
+        <TabPanel value={1} index={1} dir={theme.direction}>
+          <KnowledgeSharing />
+        </TabPanel>
+        <TabPanel value={2} index={2} dir={theme.direction}>
+          <SwiftField />
+        </TabPanel>
+      </SwipeableViews>
     </React.Fragment>
   );
 }

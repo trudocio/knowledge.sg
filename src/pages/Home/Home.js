@@ -107,7 +107,7 @@ export default function Home(props) {
   return (
     <React.Fragment>
       <NavBar value={value} onChange={handleChange} />
-      {value === 6 && <Knowledge></Knowledge>}
+      {value === 6 && <Knowledge ></Knowledge>}
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
@@ -134,7 +134,7 @@ export default function Home(props) {
           {/* <Csr /> */}
         </TabPanel>
         <TabPanel value={value} index={6} dir={theme.direction}>
-          <KnowledgeSharing />
+          {/* <KnowledgeSharing /> */}
         </TabPanel>
       </SwipeableViews>
       <ScrollTop {...props}>
