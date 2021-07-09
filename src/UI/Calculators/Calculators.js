@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 // Material Imports
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Grid, IconButton } from "@material-ui/core";
+import { Button, Grid, IconButton, Box } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 // Image Imports
@@ -113,6 +113,17 @@ const useStyles = makeStyles((theme) => ({
       padding: "4px !important", // override inline-style
     },
   },
+  flex: {
+    display: "flex",
+    marginBottom: "20px",
+    alignItems: "flex-start",
+  },
+  energy: {
+    marginBottom: "20px",
+  },
+  selectValue: {
+    marginRight: "30px",
+  },
 }));
 const useOutlinedInputStyles = makeStyles((theme) => ({
   root: {
@@ -135,18 +146,103 @@ export default function Calculators(props) {
   const outlinedInputClasses = useOutlinedInputStyles();
   const [open, setOpen] = React.useState(false);
   const [products, setProducts] = React.useState("");
-
+  const [openCal, setOpenCal] = React.useState(false);
   const handleChange = (event) => {
     console.log("Event change", event.target.value);
     setProducts(event.target.value);
   };
+  const to2dp = (obj) => {
+    var str = String(obj);
+    var index = str.indexOf(".");
 
+    // if the number is an integer, or if it already has 2 d.p. or less
+    if (index == -1 || str.length < index + 5) return obj;
+    else return String(str.substring(0, index + 5));
+  };
+  const CalcSEUnits = () => {
+    //  Get the to and from bases
+    var strFromUnit =
+      document.SEcalc.UnitFromName.options[
+        document.SEcalc.UnitFromName.selectedIndex
+      ].value;
+    var strToUnit =
+      document.SEcalc.UnitToName.options[
+        document.SEcalc.UnitToName.selectedIndex
+      ].value;
+    console.log("Details", strFromUnit, strToUnit);
+    switch (strFromUnit) {
+      case "Btu/lb":
+        switch (strToUnit) {
+          case "Btu/lb":
+            document.SEcalc.UnitToValue.value = to2dp(
+              document.SEcalc.UnitFromValue.value
+            );
+            break;
+          case "kcal/kg":
+            document.SEcalc.UnitToValue.value = to2dp(
+              0.555555 * document.SEcalc.UnitFromValue.value
+            );
+            break;
+          case "MJ/kg":
+            document.SEcalc.UnitToValue.value = to2dp(
+              0.002326 * document.SEcalc.UnitFromValue.value
+            );
+            break;
+        }
+        break;
+      case "kcal/kg":
+        switch (strToUnit) {
+          case "Btu/lb":
+            document.SEcalc.UnitToValue.value = to2dp(
+              1.8 * document.SEcalc.UnitFromValue.value
+            );
+            break;
+          case "kcal/kg":
+            document.SEcalc.UnitToValue.value = to2dp(
+              document.SEcalc.UnitFromValue.value
+            );
+            break;
+          case "MJ/kg":
+            document.SEcalc.UnitToValue.value = to2dp(
+              (4.1868 / 1000) * document.SEcalc.UnitFromValue.value
+            );
+            break;
+        }
+        break;
+      case "MJ/kg":
+        switch (strToUnit) {
+          case "Btu/lb":
+            document.SEcalc.UnitToValue.value = to2dp(
+              429.92261 * document.SEcalc.UnitFromValue.value
+            );
+            break;
+          case "kcal/kg":
+            document.SEcalc.UnitToValue.value = to2dp(
+              239.00375 * document.SEcalc.UnitFromValue.value
+            );
+            break;
+          case "MJ/kg":
+            document.SEcalc.UnitToValue.value = to2dp(
+              document.SEcalc.UnitFromValue.value
+            );
+            break;
+        }
+        break;
+    }
+  };
   const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
+  };
+  const handleOpenCal = () => {
+    setOpenCal(true);
+  };
+
+  const handleCloseCal = () => {
+    setOpenCal(false);
   };
   return (
     <Grid container xs={12} key={key} justify="center" alignItems="center">
@@ -167,7 +263,13 @@ export default function Calculators(props) {
             MAKE A REQUEST TO US
           </Button>
         </Grid>
-        <Grid key={1} justify="center" alignItems="center" item>
+        <Grid
+          onClick={() => handleOpenCal()}
+          key={2}
+          justify="center"
+          alignItems="center"
+          item
+        >
           <IconButton
             variant="contained"
             aria-label="coal calculator"
@@ -177,6 +279,85 @@ export default function Calculators(props) {
           </IconButton>
         </Grid>
       </Grid>
+      <Modal
+        className={classes.modal}
+        open={openCal}
+        onClose={handleCloseCal}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={openCal}>
+          <div className={classes.paper}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                width: "100%",
+                justifyContent: "flex-end",
+              }}
+            >
+              <IconButton
+                color="inherit"
+                aria-label="close"
+                onClick={handleCloseCal}
+                edge="end"
+                disableFocusRipple={true}
+              >
+                <CloseIcon />
+              </IconButton>
+            </div>
+            <h3>Coal Conversions for Traders</h3>
+            <p style={{ fontSize: "13px" }}>
+              CONVERT COAL ENRGY FROM THE GIVEN BASIS TO DESIRED BASIS
+            </p>
+            <form id="SEcalc" name="SEcalc">
+              <select name="select4" id="energy" className={classes.energy}>
+                <option>Energy</option>
+              </select>
+              <div className={classes.flex}>
+                <div>
+                  <select
+                    name="UnitFromName"
+                    className={classes.selectValue}
+                    onChange={CalcSEUnits}
+                  >
+                    <option value="Btu/lb">Btu/lb</option>
+                    <option value="kcal/kg">kcal/kg</option>
+                    <option value="MJ/kg">MJ/kg</option>
+                  </select>
+                </div>
+                <div>
+                  <select
+                    name="UnitToName"
+                    className={classes.selectValue}
+                    onChange={CalcSEUnits}
+                  >
+                    <option value="Btu/lb">Btu/lb</option>
+                    <option value="kcal/kg">kcal/kg</option>
+                    <option value="MJ/kg">MJ/kg</option>
+                  </select>
+                </div>
+              </div>
+              <div className={classes.flex}>
+                <div className={classes.selectValue}>
+                  <input
+                    name="UnitFromValue"
+                    type="text"
+                    size="20"
+                    onChange={CalcSEUnits}
+                  />
+                </div>
+                <div className={classes.selectValue}>
+                  <input name="UnitToValue" type="text" size="20" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </Fade>
+      </Modal>
       <Modal
         className={classes.modal}
         open={open}
@@ -189,15 +370,24 @@ export default function Calculators(props) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <IconButton
-              color="inherit"
-              aria-label="close"
-              onClick={handleClose}
-              edge="end"
-              disableFocusRipple={true}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                width: "100%",
+                justifyContent: "flex-end",
+              }}
             >
-              <CloseIcon />
-            </IconButton>
+              <IconButton
+                color="inherit"
+                aria-label="close"
+                onClick={handleClose}
+                edge="end"
+                disableFocusRipple={true}
+              >
+                <CloseIcon />
+              </IconButton>
+            </div>
             <form className={classes.root} noValidate autoComplete="off">
               <TextField
                 className={classes.input}
