@@ -117,11 +117,19 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 20000,
     height: "137.94px",
   },
+  inlineHeading: {
+    fontSize: "15px",
+    color: "#292828",
+    textAlign: "center",
+    fontFamily: "Poppins",
+    fontWeight: "bold",
+    // marginLeft: theme.spacing(4)
+  },
   inline: {
     fontSize: "15px",
     color: "#292828",
     textAlign: "center",
-    fontFamily: "'Poppins', serif",
+    fontFamily: "Poppins",
     // marginLeft: theme.spacing(4)
   },
   inlineContainer: {
@@ -136,12 +144,35 @@ const useStyles = makeStyles((theme) => ({
     width: "290px",
     height: "137.94px",
   },
+  titleDetail: {
+    flexGrow: 1,
+    alignSelf: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    display: "flex",
+    fontFamily: "'Bree Serif', serif",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    marginLeft: "10px",
+    marginRight: "20px",
+    marginTop: "10px",
+    color: "#292828",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "15px",
+    },
+    [theme.breakpoints.only("md")]: {
+      fontSize: "18px",
+    },
+    [theme.breakpoints.between("lg", "xl")]: {
+      fontSize: "24px",
+    },
+  },
   logoDrawer: {
     [theme.breakpoints.only("xs")]: {
       paddingTop: theme.spacing(2),
     },
-    width: "95px",
-    height: "45px",
+    width: "116px",
+    height: "95px",
   },
 }));
 
@@ -213,6 +244,7 @@ export function NavBar(props) {
           alt="Knowledge Global Singapore Logo"
         />
       </Box>
+      <Typography className={classes.inlineHeading}>KISSPL</Typography>
       <List>
         {[
           "ABOUT US",
@@ -260,7 +292,7 @@ export function NavBar(props) {
   return (
     <React.Fragment>
       <div className={classes.root} id="back-to-top-anchor">
-        <Hidden xsDown implementation="css">
+        <Hidden smDown implementation="css">
           <Toolbar className={classes.toolbar}>
             <Typography className={classes.title} variant="h5" align="center">
               KNOWLEDGE INTERNATIONAL STRATEGY SYSTEMS PTE. LTD.
@@ -286,6 +318,17 @@ export function NavBar(props) {
                 alt="Knowledge Global Singapore Logo"
               />
             </Box>
+          </Hidden>
+          <Hidden mdUp implementation="css">
+            <Toolbar className={classes.toolbar}>
+              <Typography
+                className={classes.titleDetail}
+                variant="h5"
+                align="center"
+              >
+                KNOWLEDGE INTERNATIONAL STRATEGY SYSTEMS PTE. LTD.
+              </Typography>
+            </Toolbar>
           </Hidden>
           {screenMedium && (
             <Box>

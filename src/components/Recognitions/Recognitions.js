@@ -62,7 +62,7 @@ export default function Recognitions(props) {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
   const theme = useTheme();
-
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs","md"));
   const tabDetails = () => {
     return [
       {
@@ -78,7 +78,7 @@ export default function Recognitions(props) {
                   justify="center"
                   alignItems="center"
                   spacing={3}
-                  style={{marginTop:"-10px"}}
+                  style={{ marginTop: "-10px" }}
                   container
                 >
                   {heroDetails().map((value, idx) => {
@@ -134,7 +134,7 @@ export default function Recognitions(props) {
   };
   return (
     <React.Fragment>
-      <Container>
+      {/* <Container>
         <Grid container justify="center" alignItems="center" spacing={3}>
           <Box
             display="flex"
@@ -148,6 +148,37 @@ export default function Recognitions(props) {
             <LinedText key={1} value={value} tabDetails={tabDetails} />
           </Box>
           <Calculators key={2} />
+        </Grid>
+      </Container> */}
+      <Container>
+        <Grid
+          container
+          direction={screenSmall ? "column" : "row"}
+          justify="space-between"
+          alignItems="center"
+          spacing={screenSmall ? 0 : 3}
+        >
+          <Grid
+            key={0}
+            xs={screenSmall ? 12 : 6}
+            justify="center"
+            alignItems="center"
+            item
+          >
+            <img
+              src={shipyard}
+              style={{ width: "300px", height: "371px", marginRight: "20px" }}
+            />
+          </Grid>
+          <Grid
+            key={1}
+            xs={screenSmall ? 12 : 6}
+            justify="center"
+            alignItems="center"
+            item
+          >
+            <LinedText key={1} value={value} tabDetails={tabDetails} />
+          </Grid>
         </Grid>
       </Container>
     </React.Fragment>
