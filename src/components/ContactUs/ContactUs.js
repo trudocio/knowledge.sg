@@ -75,7 +75,7 @@ export default function ContactUs(props) {
   const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   return (
     <React.Fragment>
-      <Container>
+      <Container style={{ marginBottom: "30px" }}>
         <Grid
           container
           direction={screenSmall ? "column" : "row"}
