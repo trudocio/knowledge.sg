@@ -95,7 +95,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#225A41",
   },
   line: {
-    border: "1px solid #000000",
+    height: "1px",
+    backgroundColor: "#000000",
     width: "85%",
     alignSelf: "center",
     marginLeft: "50%",
@@ -104,15 +105,16 @@ const useStyles = makeStyles((theme) => ({
   lineTop: {
     position: "relative",
     top: "50px",
-    zIndex: "-1",
+    zIndex: 10000,
   },
   lineBottom: {
     position: "relative",
     bottom: "50px",
-    zIndex: "-1",
+    zIndex: 10000,
   },
   logo: {
     width: "290px",
+    zIndex: 20000,
     height: "137.94px",
   },
   inline: {
@@ -217,6 +219,7 @@ export function NavBar(props) {
           "PRODUCTS",
           "SHIPPING",
           "CSR",
+          "",
           "RECOGNITIONS",
           "KNOWLEDGE SHARING",
           "CONTACT US",
@@ -307,7 +310,6 @@ export function NavBar(props) {
           <Hidden mdDown implementation="css">
             <div>
               <hr className={clsx(classes.line, classes.lineTop)} />
-              {/* <div className={classes.line}></div> */}
               <Tabs
                 value={value}
                 onChange={other.onChange}

@@ -22,7 +22,7 @@ import clsx from "clsx";
 import SwipeableViews from "react-swipeable-views";
 const useStyles = makeStyles((theme) => ({
   scroll: {
-    height: "30vh",
+    height: "50vh",
     width: "600px",
   },
   tableHead: {
@@ -100,7 +100,7 @@ export default function KnowledgeSharing(props) {
       <Box
         style={{
           marginLeft: "50%",
-          marginTop: screenSmall ? "20%" : "7%",
+          marginTop: screenSmall ? "20%" : "12%",
           backgroundColor: "#ffffff",
           transform: "translate(-50%, -50%)",
         }}

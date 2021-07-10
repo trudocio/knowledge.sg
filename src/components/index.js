@@ -6,3 +6,5 @@ export * from "./KnowledgeSharing";
 export * from "./Knowledge";
 export * from "./CoalGlossary";
 export * from './SwiftField';
+export * from './Recognitions';
+export * from './ContactUs';

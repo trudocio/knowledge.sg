@@ -36,15 +36,18 @@ const useStyles = makeStyles((theme) => ({
   tableHead: {
     color: "#225A41",
     fontWeight: "bold",
+    fontFamily: "Poppins",
   },
   category: {
     color: "#212529",
     fontSize: "16px",
     fontWeight: 900,
     marginTop: "15px",
+    fontFamily: "Poppins",
   },
   categoryTitle: {
     fontSize: "10px",
+    fontFamily: "Poppins",
     color: "#212529",
   },
   link: {},

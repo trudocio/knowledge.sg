@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tableHead: {
     color: "#225A41",
+    fontFamily: "Poppins",
     fontWeight: "bold",
     fontSize: "16px",
   },
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   description: {
     color: "#000000",
     fontSize: "14px",
+    fontFamily: "Poppins",
     marginBottom: "10px",
   },
 }));
@@ -41,7 +43,7 @@ export default function CoalGlossary(props) {
       <Box
         style={{
           marginLeft: "50%",
-          marginTop: screenSmall ? "20%" : "7%",
+          marginTop: screenSmall ? "20%" : "9%",
           backgroundColor: "#ffffff",
           transform: "translate(-50%, -50%)",
         }}

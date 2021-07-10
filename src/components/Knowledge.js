@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     borderRight: "1px solid #000000",
     borderLeft: "1px solid #000000",
-    fontFamily: "Bree Serif",
+    fontFamily: "Poppins",
     fontStyle: "normal",
     fontWeight: "normal",
     [theme.breakpoints.down("xs")]: {
@@ -36,10 +36,12 @@ const useStyles = makeStyles((theme) => ({
   activeTab: {
     color: "#ffffff",
     backgroundColor: "#225A41",
+    fontFamily: "Poppins",
   },
   tabLeft: {
     borderLeft: "unset",
     width: "200px",
+    fontFamily: "Poppins",
   },
   tabRight: {
     borderRight: "unset",
@@ -48,8 +50,10 @@ const useStyles = makeStyles((theme) => ({
   line: {
     width: "80%",
     position: "relative",
+    height:"1px",
+    backgroundColor:"#424040",
     top: "-5px",
-    border: "1px solid #000000;",
+    // border: "1px solid #424040;",
   },
   line2: {
     width: "80%",
@@ -101,7 +105,6 @@ export default function Knowledge(props) {
             </Tabs>
           </Paper>
           <hr className={classes.line} />
-          <hr className={classes.line2} />
         </Grid>
       </Container>
       {value === 1 && (
@@ -114,6 +117,7 @@ export default function Knowledge(props) {
               justifyContent: "center",
               marginTop: "45px",
               color: "#000000",
+              fontFamily: "Poppins",
               fontSize: 17,
               marginLeft: "50%",
               transform: "translate(-50%, -50%)",
@@ -148,6 +152,7 @@ export default function Knowledge(props) {
                     <span
                       style={{
                         color: "#225A41",
+                        fontFamily: "Poppins",
                         textDecoration: "underline",
                         cursor: "pointer",
                       }}
@@ -174,7 +179,7 @@ export default function Knowledge(props) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={0} index={0} dir={theme.direction}>
-         <CoalGlossary />
+          <CoalGlossary />
         </TabPanel>
         <TabPanel value={1} index={1} dir={theme.direction}>
           <KnowledgeSharing />

@@ -21,6 +21,8 @@ import {
   AboutUsExtended,
   Products,
   Shipping,
+  ContactUs,
+  Recognitions,
   Csr,
   KnowledgeSharing,
 } from "../../components";
@@ -95,6 +97,7 @@ export default function Home(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const [text, setText] = React.useState("");
   const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   const handleChangeIndex = (index) => {
     setValue(index);
@@ -102,12 +105,13 @@ export default function Home(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    setText(event);
   };
 
   return (
     <React.Fragment>
       <NavBar value={value} onChange={handleChange} />
-      {value === 6 && <Knowledge ></Knowledge>}
+      {value === 6 && <Knowledge></Knowledge>}
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
@@ -130,11 +134,14 @@ export default function Home(props) {
         <TabPanel value={value} index={4} dir={theme.direction}>
           {/* <Csr /> */}
         </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
-          {/* <Csr /> */}
+        <TabPanel value={value} index={5} dir={theme.direction}>
+          <Recognitions />
         </TabPanel>
         <TabPanel value={value} index={6} dir={theme.direction}>
           {/* <KnowledgeSharing /> */}
+        </TabPanel>
+        <TabPanel value={value} index={7} dir={theme.direction}>
+          <ContactUs />
         </TabPanel>
       </SwipeableViews>
       <ScrollTop {...props}>

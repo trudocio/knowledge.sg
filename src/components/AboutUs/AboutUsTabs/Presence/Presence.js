@@ -7,7 +7,7 @@ import { Container, Typography, Grid, } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 
 // Internal imports
-import presenceMap from "../../../../assets/aboutUs/presence/presence_map.svg";
+import presenceMap from "../../../../assets/aboutUs/presence/maps.png";
 
 const useStyles = makeStyles(theme => ({
   presenceMap: {

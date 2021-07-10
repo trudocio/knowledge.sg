@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: "350px"
   },
   presenceText: {
-    fontFamily: "'Poppins', serif",
+    fontFamily: "Poppins",
     fontStyle: "normal",
     fontSize: "17px",
     marginTop: "20px",

@@ -49,12 +49,13 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(2),
   },
   heroVideo: {
-    maxWidth: "1100px",
-    minHeight: "633px",
+    width: "1360px",
+    maxHeight: "1360px",
     marginTop: "11px",
     display: "flex",
+    transform: "translate(-50%, -30%)",
+    marginLeft: "50%",
     alignItems: "center",
-    margin: "auto",
   },
   requestButton: {
     backgroundColor: "#225A41",
@@ -101,19 +102,17 @@ export default function Products(props) {
           />
         </Hidden>
         {screenMedium && <HeroImage image_src={shipyard} />}
-        <Grid container justify="center" alignItems="center" spacing={3}>
-          {/* <Hidden mdUp implementation="css">
-            <HeroImage image_src={shipyard} />
-          </Hidden>
-          <Hidden mdDown implementation="css">
-            <video
-              src={knowledge_video}
-              loop
-              autoPlay
-              className={classes.heroVideo}
-            />
-          </Hidden>
-          {screenMedium && <HeroImage image_src={shipyard} />} */}
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          style={
+            useMediaQuery(theme.breakpoints.down("md"))
+              ? { marginTop: "0px" }
+              : { marginTop: "-250px" }
+          }
+          spacing={3}
+        >
           <Grid
             key={1}
             xs={12}

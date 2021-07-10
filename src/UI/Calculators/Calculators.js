@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#FFFFFF",
     fontWeight: "500",
     fontSize: "20px",
-    marginBottom: "20px",
-    marginTop: "10px",
+    marginBottom: "40px",
+    marginTop: "40px",
     lineHeight: "30px",
     borderRadius: "unset",
     /* identical to box height */
@@ -120,9 +120,20 @@ const useStyles = makeStyles((theme) => ({
   },
   energy: {
     marginBottom: "20px",
+    width: "100px",
+    height: "20px",
   },
   selectValue: {
     marginRight: "30px",
+    
+  },
+  selectEnergy: {
+    marginRight: "78px",
+    width: "100px",
+    height: "20px",
+  },
+  heroText: {
+    fontSize: "16px",
   },
 }));
 const useOutlinedInputStyles = makeStyles((theme) => ({
@@ -148,7 +159,6 @@ export default function Calculators(props) {
   const [products, setProducts] = React.useState("");
   const [openCal, setOpenCal] = React.useState(false);
   const handleChange = (event) => {
-    console.log("Event change", event.target.value);
     setProducts(event.target.value);
   };
   const to2dp = (obj) => {
@@ -169,7 +179,6 @@ export default function Calculators(props) {
       document.SEcalc.UnitToName.options[
         document.SEcalc.UnitToName.selectedIndex
       ].value;
-    console.log("Details", strFromUnit, strToUnit);
     switch (strFromUnit) {
       case "Btu/lb":
         switch (strToUnit) {
@@ -275,7 +284,7 @@ export default function Calculators(props) {
             aria-label="coal calculator"
             size="medium"
           >
-            <img src={coalCalculator} alt="Coal Calculator" height="50px"></img>
+            <img src={coalCalculator} alt="Coal Calculator" height="40px"></img>
           </IconButton>
         </Grid>
       </Grid>
@@ -309,52 +318,54 @@ export default function Calculators(props) {
                 <CloseIcon />
               </IconButton>
             </div>
-            <h3>Coal Conversions for Traders</h3>
-            <p style={{ fontSize: "13px" }}>
-              CONVERT COAL ENRGY FROM THE GIVEN BASIS TO DESIRED BASIS
-            </p>
-            <form id="SEcalc" name="SEcalc">
-              <select name="select4" id="energy" className={classes.energy}>
-                <option>Energy</option>
-              </select>
-              <div className={classes.flex}>
-                <div>
-                  <select
-                    name="UnitFromName"
-                    className={classes.selectValue}
-                    onChange={CalcSEUnits}
-                  >
-                    <option value="Btu/lb">Btu/lb</option>
-                    <option value="kcal/kg">kcal/kg</option>
-                    <option value="MJ/kg">MJ/kg</option>
-                  </select>
+            <div style={{ marginTop: "-50px" }}>
+              <h3>Coal Conversions for Traders</h3>
+              <p style={{ fontSize: "13px" }}>
+                CONVERT COAL ENRGY FROM THE GIVEN BASIS TO DESIRED BASIS
+              </p>
+              <form id="SEcalc" name="SEcalc">
+                <select name="select4" id="energy" className={classes.energy}>
+                  <option>Energy</option>
+                </select>
+                <div className={classes.flex}>
+                  <div>
+                    <select
+                      name="UnitFromName"
+                      className={classes.selectEnergy}
+                      onChange={CalcSEUnits}
+                    >
+                      <option value="Btu/lb">Btu/lb</option>
+                      <option value="kcal/kg">kcal/kg</option>
+                      <option value="MJ/kg">MJ/kg</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select
+                      name="UnitToName"
+                      className={classes.selectEnergy}
+                      onChange={CalcSEUnits}
+                    >
+                      <option value="Btu/lb">Btu/lb</option>
+                      <option value="kcal/kg">kcal/kg</option>
+                      <option value="MJ/kg">MJ/kg</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <select
-                    name="UnitToName"
-                    className={classes.selectValue}
-                    onChange={CalcSEUnits}
-                  >
-                    <option value="Btu/lb">Btu/lb</option>
-                    <option value="kcal/kg">kcal/kg</option>
-                    <option value="MJ/kg">MJ/kg</option>
-                  </select>
+                <div className={classes.flex}>
+                  <div className={classes.selectValue}>
+                    <input
+                      name="UnitFromValue"
+                      type="text"
+                      size="20"
+                      onChange={CalcSEUnits}
+                    />
+                  </div>
+                  <div className={classes.selectValue}>
+                    <input name="UnitToValue" type="text" size="20" />
+                  </div>
                 </div>
-              </div>
-              <div className={classes.flex}>
-                <div className={classes.selectValue}>
-                  <input
-                    name="UnitFromValue"
-                    type="text"
-                    size="20"
-                    onChange={CalcSEUnits}
-                  />
-                </div>
-                <div className={classes.selectValue}>
-                  <input name="UnitToValue" type="text" size="20" />
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </Fade>
       </Modal>

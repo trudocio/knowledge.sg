@@ -16,23 +16,23 @@ import {
   Paper,
   Tabs,
   Tab,
-  useMediaQuery
+  useMediaQuery,
 } from "@material-ui/core";
 
 // Internal Imports
 import { TabPanel } from "../../UI";
 import { Business, Presence, Management, Strengths } from "./AboutUsTabs/index";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: "50px",
-    marginBottom: "20px"
+    marginBottom: "20px",
   },
   root: {
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
     boxShadow: "none",
-    border: 0
+    border: 0,
     // "&:not(:last-child)": {
     //   borderBottom: 0
     // },
@@ -41,60 +41,72 @@ const useStyles = makeStyles(theme => ({
     // }
   },
   accordian: {
-    borderBottom: "1.5px solid rgba(0, 0, 0)"
+    borderBottom: "1.5px solid rgba(0, 0, 0)",
   },
   heading: {
     fontSize: 12,
     color: "#292828",
-    fontFamily: "Bree Serif",
+    fontFamily: "Poppins",
     fontStyle: "normal",
-    fontWeight: "400"
+    fontWeight: "400",
   },
   activeHeading: {
     fontSize: 12,
     color: "#225A41",
-    fontFamily: "Bree Serif",
+    fontFamily: "Poppins",
     fontStyle: "normal",
-    fontWeight: "400"
+    fontWeight: "400",
   },
   tabsPaper: {
     width: "100%",
-    borderBottom: "3px solid #292828"
+    borderBottom: "3px solid #292828",
   },
   expand_icon: {
-    color: "#225A41"
+    color: "#225A41",
   },
   tab: {
     borderRight: "1px solid #000000",
     borderLeft: "1px solid #000000",
-    fontFamily: "Bree Serif",
+    fontFamily: "Poppins",
     fontStyle: "normal",
     fontWeight: "normal",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "12px"
+      fontSize: "20px",
     },
     [theme.breakpoints.between("sm", "md")]: {
-      fontSize: "14px"
+      fontSize: "14px",
     },
     fontSize: "18px",
-    color: "#292828"
+    letterSpacing: 0.8,
+    color: "#292828",
   },
   activeTab: {
     color: "#ffffff",
-    backgroundColor: "#225A41"
+    backgroundColor: "#225A41",
   },
   tabLeft: {
-    borderLeft: "unset"
+    borderLeft: "unset",
+    fontSize: "20px",
+    fontFamily: "Poppins",
+    letterSpacing: 0.8,
+  },
+  tabcenter: {
+    fontSize: "20px",
+    fontFamily: "Poppins",
+    letterSpacing: 0.8,
   },
   tabRight: {
-    borderRight: "unset"
+    borderRight: "unset",
+    fontSize: "20px",
+    fontFamily: "Poppins",
+    letterSpacing: 0.8,
   },
   line: {
     width: "100%",
     position: "relative",
     top: "-5px",
-    border: "1px solid #292828;"
-  }
+    border: "1px solid #292828;",
+  },
 }));
 
 export default function AboutUsExtended(props) {
@@ -105,16 +117,16 @@ export default function AboutUsExtended(props) {
     setValue(newValue);
   };
 
-  const handleChangeIndex = index => {
+  const handleChangeIndex = (index) => {
     setValue(index);
   };
 
-  const getTabClass = isActive => {
+  const getTabClass = (isActive) => {
     return isActive ? clsx(classes.tab, classes.activeTab) : classes.tab;
   };
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpand = panel => (event, newExpanded) => {
+  const handleExpand = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
@@ -178,7 +190,7 @@ export default function AboutUsExtended(props) {
               onChange={handleExpand("panel3")}
             >
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon className={classes.expand_icon}/>}
+                expandIcon={<ExpandMoreIcon className={classes.expand_icon} />}
                 aria-controls="panel2a-content"
                 id="panel2a-header"
               >
@@ -202,7 +214,7 @@ export default function AboutUsExtended(props) {
               onChange={handleExpand("panel4")}
             >
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon className={classes.expand_icon}/>}
+                expandIcon={<ExpandMoreIcon className={classes.expand_icon} />}
                 aria-controls="panel2a-content"
                 id="panel2a-header"
               >
