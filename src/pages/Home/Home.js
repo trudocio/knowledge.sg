@@ -8,10 +8,12 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   useScrollTrigger,
   Zoom,
-  Fab
+  Fab,
+  Box,
+  useMediaQuery,
 } from "@material-ui/core";
 import { KeyboardArrowUp } from "@material-ui/icons";
-
+import Knowledge from "../../components/Knowledge.js";
 // Internal Imports
 import { NavBar, Footer } from "../../layout";
 import {
@@ -19,29 +21,32 @@ import {
   AboutUsExtended,
   Products,
   Shipping,
-  Csr
+  ContactUs,
+  Recognitions,
+  Csr,
+  KnowledgeSharing,
 } from "../../components";
 import { TabPanel } from "../../UI";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   scrollToTop: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2)
+    right: theme.spacing(2),
   },
   fabRoot: {
     backgroundColor: "transparent",
     boxShadow: "unset",
     borderStyle: "solid",
     borderWidth: "2px",
-    borderColor: "#225A41"
+    borderColor: "#225A41",
   },
   fabIcon: {
-    color: "#225A41"
-  }
+    color: "#225A41",
+  },
 }));
 
 function ScrollTop(props) {
@@ -53,10 +58,10 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 10
+    threshold: 10,
   });
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
     );
@@ -85,25 +90,28 @@ ScrollTop.propTypes = {
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
    */
-  window: PropTypes.func
+  window: PropTypes.func,
 };
 
 export default function Home(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
-
-  const handleChangeIndex = index => {
+  const [text, setText] = React.useState("");
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const handleChangeIndex = (index) => {
     setValue(index);
   };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    setText(event);
   };
 
   return (
     <React.Fragment>
       <NavBar value={value} onChange={handleChange} />
+      {value === 6 && <Knowledge></Knowledge>}
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
@@ -123,6 +131,18 @@ export default function Home(props) {
         <TabPanel value={value} index={3} dir={theme.direction}>
           <Csr />
         </TabPanel>
+        <TabPanel value={value} index={4} dir={theme.direction}>
+          {/* <Csr /> */}
+        </TabPanel>
+        <TabPanel value={value} index={5} dir={theme.direction}>
+          <Recognitions />
+        </TabPanel>
+        <TabPanel value={value} index={6} dir={theme.direction}>
+          {/* <KnowledgeSharing /> */}
+        </TabPanel>
+        <TabPanel value={value} index={7} dir={theme.direction}>
+          <ContactUs />
+        </TabPanel>
       </SwipeableViews>
       <ScrollTop {...props}>
         <Fab
@@ -134,6 +154,9 @@ export default function Home(props) {
           <KeyboardArrowUp className={classes.fabIcon} fontSize="large" />
         </Fab>
       </ScrollTop>
+      {value === 6 && (
+        <div style={{ height: "20px", backgroundColor: "#ffffff" }}></div>
+      )}
       <Footer />
     </React.Fragment>
   );
