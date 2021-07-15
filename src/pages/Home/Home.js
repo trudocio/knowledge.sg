@@ -122,25 +122,60 @@ export default function Home(props) {
             <AboutUsExtended />
           </AboutUs>
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel
+          style={{ minHeight: "760px" }}
+          value={value}
+          index={1}
+          dir={theme.direction}
+        >
           <Products />
         </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
+        <TabPanel
+          style={{ minHeight: "760px" }}
+          value={value}
+          index={2}
+          dir={theme.direction}
+        >
           <Shipping />
         </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
+        <TabPanel
+          style={{ minHeight: "760px" }}
+          value={value}
+          index={3}
+          dir={theme.direction}
+        >
           <Csr />
         </TabPanel>
-        <TabPanel value={value} index={4} dir={theme.direction}>
+        <TabPanel
+          style={{ minHeight: "760px" }}
+          value={value}
+          index={4}
+          dir={theme.direction}
+        >
           {/* <Csr /> */}
         </TabPanel>
-        <TabPanel value={value} index={5} dir={theme.direction}>
+        <TabPanel
+          style={{ minHeight: "760px" }}
+          value={value}
+          index={5}
+          dir={theme.direction}
+        >
           <Recognitions />
         </TabPanel>
-        <TabPanel value={value} index={6} dir={theme.direction}>
+        <TabPanel
+          value={value}
+          index={6}
+          style={{ minHeight: "200px" }}
+          dir={theme.direction}
+        >
           {/* <KnowledgeSharing /> */}
         </TabPanel>
-        <TabPanel value={value} index={7} dir={theme.direction}>
+        <TabPanel
+          style={{ minHeight: "760px" }}
+          value={value}
+          index={7}
+          dir={theme.direction}
+        >
           <ContactUs />
         </TabPanel>
       </SwipeableViews>

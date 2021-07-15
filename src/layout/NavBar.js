@@ -402,7 +402,7 @@ export function NavBar(props) {
                   disableRipple={true}
                 />
               </Tabs>
-              {/* <div className={classes.line}></div> */}
+
               <hr className={clsx(classes.line, classes.lineBottom)} />
             </div>
           </Hidden>
