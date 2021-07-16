@@ -49,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(2),
   },
   heroVideo: {
-    width: "1360px",
-    maxHeight: "1360px",
+    width: "98%",
+    maxHeight: "98%",
     marginTop: "11px",
     display: "flex",
     transform: "translate(-50%, -30%)",
@@ -109,7 +109,7 @@ export default function Products(props) {
           style={
             useMediaQuery(theme.breakpoints.down("md"))
               ? { marginTop: "0px" }
-              : { marginTop: "-250px" }
+              : { marginTop: "-220px" }
           }
           spacing={3}
         >

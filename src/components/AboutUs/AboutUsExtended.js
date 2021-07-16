@@ -246,19 +246,16 @@ export default function AboutUsExtended(props) {
                 >
                   <Tab
                     className={clsx(getTabClass(value === 0), classes.tabLeft)}
-                    label="OUR PRESENCE"
+                    label="PRESENCE"
                   />
-                  <Tab
-                    className={getTabClass(value === 1)}
-                    label="OUR BUSINESS"
-                  />
+                  <Tab className={getTabClass(value === 1)} label="BUSINESS" />
                   <Tab
                     className={getTabClass(value === 2)}
-                    label="OUR MANAGEMENT"
+                    label="MANAGEMENT"
                   />
                   <Tab
                     className={clsx(getTabClass(value === 3), classes.tabRight)}
-                    label="OUR STRENGTHS"
+                    label="STRENGTHS"
                   />
                 </Tabs>
               </Paper>
@@ -273,16 +270,36 @@ export default function AboutUsExtended(props) {
               index={value}
               onChangeIndex={handleChangeIndex}
             >
-              <TabPanel value={value} index={0} dir={theme.direction}>
+              <TabPanel
+                style={{ height: "600px" }}
+                value={value}
+                index={0}
+                dir={theme.direction}
+              >
                 <Presence />
               </TabPanel>
-              <TabPanel value={value} index={1} dir={theme.direction}>
+              <TabPanel
+                style={{ height: "600px" }}
+                value={value}
+                index={1}
+                dir={theme.direction}
+              >
                 <Business />
               </TabPanel>
-              <TabPanel value={value} index={2} dir={theme.direction}>
+              <TabPanel
+                style={{ height: "600px" }}
+                value={value}
+                index={2}
+                dir={theme.direction}
+              >
                 <Management />
               </TabPanel>
-              <TabPanel value={value} index={3} dir={theme.direction}>
+              <TabPanel
+                style={{ height: "600px" }}
+                value={value}
+                index={3}
+                dir={theme.direction}
+              >
                 <Strengths />
               </TabPanel>
             </SwipeableViews>

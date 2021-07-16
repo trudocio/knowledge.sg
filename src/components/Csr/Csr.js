@@ -124,7 +124,7 @@ export default function Csr(props) {
         <Grid container justify="center" alignItems="center" spacing={3}>
           <img
             src={shipyard}
-            style={{ width: "1300px", height: "371px", marginBottom: "20px" }}
+            style={{ width: "98%", height: "371px", marginBottom: "20px" }}
           />
           <LinedText key={1} value={value} tabDetails={tabDetails} />
           <Calculators key={2} />

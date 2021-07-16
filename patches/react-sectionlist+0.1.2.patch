@@ -1,0 +1,48 @@
+diff --git a/node_modules/react-sectionlist/dist/ReactSectionList.css b/node_modules/react-sectionlist/dist/ReactSectionList.css
+index 1b2d00e..d84aa5e 100644
+--- a/node_modules/react-sectionlist/dist/ReactSectionList.css
++++ b/node_modules/react-sectionlist/dist/ReactSectionList.css
+@@ -7,20 +7,26 @@
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+-  background-color: #fafafa;
++  background-color: #ffffff;
+   padding-top: 20px;
+ }
+ 
+ .section-container {
+-  margin-bottom: 20px;
++  /* margin-bottom: 10px; */
+ }
+ 
+-.section-header,
++.section-header {
++  background-color: #ffffff;
++  display: flex;
++  align-items: flex-start;
++  padding-left:16px;
++}
+ .section-description {
+   display: flex;
+-  padding: 5px 16px;
+-  color: #9E9E9E;
+-  font-size: 15px;
++  padding-left:16px;
++  font-family:"Poppins";
++  color: #ffffff;
++  font-size: 8px;
+ }
+ 
+ .section-item-container {
+@@ -32,8 +38,8 @@
+ .section-item {
+   display: flex;
+   align-items: center;
+-  height: 45px;
+-  padding: 0 16px;
++  /* height: 45px; */
++  padding-left: 16px;
+   border-bottom: 1px solid #eee;
+ }
+ 

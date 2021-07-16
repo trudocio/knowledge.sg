@@ -100,7 +100,7 @@ export default function KnowledgeSharing(props) {
       <Box
         style={{
           marginLeft: "50%",
-          marginTop: screenSmall ? "20%" : "12%",
+          marginTop: screenSmall ? "20%" : "14%",
           backgroundColor: "#ffffff",
           transform: "translate(-50%, -50%)",
         }}

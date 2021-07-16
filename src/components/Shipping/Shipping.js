@@ -72,7 +72,10 @@ export default function Shipping(props) {
     <React.Fragment>
       <Container>
         <Grid container justify="center" alignItems="center" spacing={3}>
-          <img src={shipyard} style={{width:"1300px", height:"371px",marginBottom:"20px"}} />
+          <img
+            src={shipyard}
+            style={{ width: "98%", height: "371px", marginBottom: "20px"}}
+          />
           <LinedText key={1} value={value} tabDetails={tabDetails} />
           <Calculators key={2} />
         </Grid>
