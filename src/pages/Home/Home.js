@@ -111,19 +111,28 @@ export default function Home(props) {
   return (
     <React.Fragment>
       <NavBar value={value} onChange={handleChange} />
-      {value === 6 && <Knowledge></Knowledge>}
+      {value === 6 && (
+        <div style={{ marginTop: "220px" }}>
+          <Knowledge></Knowledge>
+        </div>
+      )}
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel
+          style={{ marginTop: "220px" }}
+          value={value}
+          index={0}
+          dir={theme.direction}
+        >
           <AboutUs>
             <AboutUsExtended />
           </AboutUs>
         </TabPanel>
         <TabPanel
-          style={{ minHeight: "760px" }}
+          style={{ minHeight: "760px", marginTop: "220px" }}
           value={value}
           index={1}
           dir={theme.direction}
@@ -131,7 +140,7 @@ export default function Home(props) {
           <Products />
         </TabPanel>
         <TabPanel
-          style={{ minHeight: "760px" }}
+          style={{ minHeight: "760px", marginTop: "220px" }}
           value={value}
           index={2}
           dir={theme.direction}
@@ -139,7 +148,7 @@ export default function Home(props) {
           <Shipping />
         </TabPanel>
         <TabPanel
-          style={{ minHeight: "760px" }}
+          style={{ minHeight: "760px", marginTop: "220px" }}
           value={value}
           index={3}
           dir={theme.direction}
@@ -147,7 +156,7 @@ export default function Home(props) {
           <Csr />
         </TabPanel>
         <TabPanel
-          style={{ minHeight: "760px" }}
+          style={{ minHeight: "760px", marginTop: "220px" }}
           value={value}
           index={4}
           dir={theme.direction}
@@ -155,7 +164,7 @@ export default function Home(props) {
           {/* <Csr /> */}
         </TabPanel>
         <TabPanel
-          style={{ minHeight: "760px" }}
+          style={{ minHeight: "760px", marginTop: "220px" }}
           value={value}
           index={5}
           dir={theme.direction}
@@ -165,13 +174,13 @@ export default function Home(props) {
         <TabPanel
           value={value}
           index={6}
-          style={{ minHeight: "200px" }}
+          style={{ minHeight: "220px" }}
           dir={theme.direction}
         >
           {/* <KnowledgeSharing /> */}
         </TabPanel>
         <TabPanel
-          style={{ minHeight: "760px" }}
+          style={{ minHeight: "760px", marginTop: "220px" }}
           value={value}
           index={7}
           dir={theme.direction}

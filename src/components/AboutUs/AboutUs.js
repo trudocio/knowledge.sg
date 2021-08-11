@@ -31,6 +31,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "20px",
     marginBottom: "20px",
   },
+  presenceText: {
+    fontFamily: "Poppins",
+    fontStyle: "normal",
+    fontSize: "18px",
+    marginTop: "20px",
+    marginBottom: "20px",
+    lineHeight: "25px",
+  },
   heroDetailsTitle: {
     fontWeight: "600",
     fontSize: "25px",
@@ -50,8 +58,8 @@ const useStyles = makeStyles((theme) => ({
   },
   heroVideo: {
     width: "98%",
-    maxHeight: "98%",
-    marginTop: "11px",
+    height: "50%",
+    // maxHeight: "98%",
     display: "flex",
     transform: "translate(-50%, -30%)",
     marginLeft: "50%",
@@ -150,10 +158,18 @@ export default function Products(props) {
               );
             })}
           </Grid>
-          <Calculators key={2} />
+          <Typography className={classes.presenceText} align="center">
+            Knowledge International Strategy Systems (KISS) was incorporated in
+            2010 with a view to build on the Group’s knowledge, resources and
+            network in coal business and to leverage Singapore’s pro-business
+            policies and deep financial, trading and shipping ecosystem. As a
+            Global Trader Program (GTP) member trader in Singapore, KISS has
+            benefitted from proximity to Indonesia and Australia.
+          </Typography>
         </Grid>
       </Container>
       {children}
+      <Calculators key={2} />
     </React.Fragment>
   );
 }

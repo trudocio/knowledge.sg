@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     alignItems: "center",
     paddingTop: theme.spacing(2),
+    zIndex: 100000,
     paddingBottom: theme.spacing(2),
   },
   title: {
@@ -105,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
   lineTop: {
     position: "relative",
     top: "50px",
+    marginTop: "-20px",
     zIndex: 10000,
   },
   lineBottom: {
@@ -292,15 +294,20 @@ export function NavBar(props) {
   return (
     <React.Fragment>
       <div className={classes.root} id="back-to-top-anchor">
-        <Hidden smDown implementation="css">
-          <Toolbar className={classes.toolbar}>
-            <Typography className={classes.title} variant="h5" align="center">
-              KNOWLEDGE INTERNATIONAL STRATEGY SYSTEMS PTE. LTD.
-            </Typography>
-          </Toolbar>
-        </Hidden>
         <CssBaseline />
-        <AppBar position="static" color="transparent" elevation={0}>
+        <AppBar
+          position="fixed"
+          className={{ marginTop: "50px" }}
+          color="#ffffff"
+          elevation={0}
+        >
+          <Hidden smDown implementation="css">
+            <Toolbar className={classes.toolbar}>
+              <Typography className={classes.title} variant="h5" align="center">
+                KNOWLEDGE INTERNATIONAL STRATEGY SYSTEMS PTE. LTD.
+              </Typography>
+            </Toolbar>
+          </Hidden>
           <Hidden mdUp implementation="css">
             <IconButton
               color="inherit"

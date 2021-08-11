@@ -4,10 +4,10 @@ import React from "react";
 // Material Imports
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
-import baseMetals from "../../assets/products/baseMetals.svg";
-import energy from "../../assets/products/energy.svg";
-import minerals from "../../assets/products/minerals.svg";
-import giri from "../../assets/products/giri.svg";
+import baseMetals from "../../assets/products/baseMetals.png";
+import energy from "../../assets/products/energy.png";
+import minerals from "../../assets/products/minerals.png";
+import giri from "../../assets/products/giri.png";
 // Internal Imports
 import { ImageGrid, LinedText, Calculators } from "../../UI";
 
@@ -93,7 +93,8 @@ const tabDetails = () => {
       content: [
         {
           heading: "Softs & Agri",
-          content:'There are various types of edible oils such as sunflower oil, olive oil, grapeseed oil, soybean oil and palm oil.'
+          content:
+            "There are various types of edible oils such as sunflower oil, olive oil, grapeseed oil, soybean oil and palm oil.",
         },
       ],
     },
@@ -110,15 +111,25 @@ export default function Products(props) {
 
   return (
     <React.Fragment>
-      <Container>
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "100px",
+        }}
+      >
         <ImageGrid
           value={value}
+          // tabDetails={tabDetails}
           tabDetails={tabDetails}
           handleChange={handleChange}
         />
-        <br />
+        {/* <br />
         <LinedText value={value} tabDetails={tabDetails} />
-        <br />
+        <br /> */}
+        <div style={{ height: "50px" }}></div>
         <Calculators />
       </Container>
       {children}

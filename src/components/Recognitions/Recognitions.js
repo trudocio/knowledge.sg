@@ -62,7 +62,7 @@ export default function Recognitions(props) {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
   const theme = useTheme();
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs","md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   const tabDetails = () => {
     return [
       {
@@ -110,20 +110,15 @@ export default function Recognitions(props) {
                   })}
                 </Grid>
                 <p class="mt-2">
-                  Knowledge International, Singapore, is committed to provide
-                  the best trading experience to all our customers.
+                  Knowledge International, Singapore has been awarded Global
+                  Trader Status under GTP by International Enterprise(IE)
+                  Singapore.
                 </p>
                 <p>
-                  Knowledge International, Singapore was awarded Global Trader
-                  Status under GTP by International Enterprise(IE) Singapore for
-                  3 years initially which was extended for further 5 years.
-                </p>
-                <p>
-                  Knowledge International, Singapore, has also been awarded the
-                  BCA GREEN MARK (Office Interior - Version 1.1) in 2016 as a
-                  form of recognition of the measures that the company has put
-                  in place for a more environmentally friendly and sustainable
-                  built environment.
+                  It has also been awarded the BCA GREEN MARK (Office Interior -
+                  Version 1.1) in 2016 as a form of recognition of the measures
+                  that the company has put in place for a more sustainable
+                  environment.
                 </p>
               </div>
             ),
@@ -167,7 +162,7 @@ export default function Recognitions(props) {
           >
             <img
               src={shipyard}
-              style={{ width: "300px", height: "371px", marginRight: "20px" }}
+              style={{ width: "300px", height: "371px", marginLeft: "100px" }}
             />
           </Grid>
           <Grid
@@ -181,6 +176,8 @@ export default function Recognitions(props) {
           </Grid>
         </Grid>
       </Container>
+      <div style={{ height: "50px" }}></div>
+      <Calculators key={2} />
     </React.Fragment>
   );
 }

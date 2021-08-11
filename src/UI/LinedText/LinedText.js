@@ -34,7 +34,7 @@ export default function LinedText(props) {
             component="p">
               {val.heading}
           </Typography>
-          <hr style={{border: "0.5px solid #000000;"}} />
+          {/* <hr style={{border: "0.5px solid #000000;"}} /> */}
           <Typography
             className={classes.heroText}
             component="p">

@@ -48,36 +48,27 @@ const tabDetails = () => {
           ),
         },
         {
-          heading: "Environmental Policy",
+          // heading: "Environmental Policy",
           content: (
             <div>
-              <p class="mt-4">
-                Knowledge International, Singapore, takes pride in building a
-                sustainable working environment for all our staff.
-              </p>
               <p class="mt-5">
-                <strong>Basic Philosophy</strong>
+                <strong>Environmental Policy and Basic Philosophy</strong>
               </p>
-              <p>
-                As an international trading company specialising in metals and
-                minerals and poised for expansion and growth, we believe that
-                <strong>
-                  "care for the global environment is a precondition to
-                  corporate viability"{" "}
-                </strong>
-                and recognize that the preservation of the global environment is
-                one of the most urgent issues for all human beings. We are
-                committed to conservation of natural resources and to passing
-                down a better environment to the next generation.
+              <p class="mt-4">
+                As an international trading company specializing in metals and
+                minerals and poised for expansion and growth, we believe
+                that"care for the global environment is a precondition to
+                corporate viability" and recognize that the preservation of the
+                global environment is one of the most urgent issues for all
+                human beings. We are committed to the conservation of natural
+                resources and to passing down a better environment to the next
+                generation.
               </p>
 
               <p class="mt-5">
                 <strong>Corporate Action Policy </strong>
               </p>
-              <p>
-                The key steps we propose to take to implement our environmental
-                philosophy are:{" "}
-              </p>
+
               <ul class="list-items">
                 <li>
                   We shall comply with all environmental laws and regulations,
@@ -96,14 +87,6 @@ const tabDetails = () => {
                   We as part of our business also disseminate our environmental
                   policy and efforts to preserve the global environment amongst
                   our business and trade partners.
-                </li>
-                <li>
-                  We shall further evaluate the implementation of our
-                  environmental policy annually and set objectives and targets
-                  relating to the same which are both technically and
-                  economically attainable in order that our environmental
-                  management systems are constantly improved thereby minimising
-                  our negative impact on the global environment.
                 </li>
               </ul>
             </div>

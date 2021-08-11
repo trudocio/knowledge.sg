@@ -2,25 +2,20 @@
 import React from "react";
 // Material imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  Container,
-  Typography,
-  Grid,
-  useMediaQuery
-} from "@material-ui/core";
+import { Container, Typography, Grid, useMediaQuery } from "@material-ui/core";
 
 // Internal imports
 import businessCoal from "../../../../assets/aboutUs/business/business_coal.png";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   presenceMap: {
     [theme.breakpoints.down("xs")]: {
       marginTop: "11px",
       height: "100%",
-      width: "100%"
+      width: "100%",
     },
     marginTop: "11px",
-    maxHeight: "350px"
+    maxHeight: "350px",
   },
   presenceText: {
     fontFamily: "Poppins",
@@ -28,14 +23,14 @@ const useStyles = makeStyles(theme => ({
     fontSize: "17px",
     marginTop: "20px",
     marginBottom: "20px",
-    lineHeight: "25px"
-  }
+    lineHeight: "25px",
+  },
 }));
 
 export default function Business(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs","md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   return (
     <React.Fragment>
       <Container>
@@ -84,6 +79,10 @@ export default function Business(props) {
               Consulting on techno-commercial issues is an integrated part of
               our business. Right product delivered from Mine to the Plant using
               multimodal transport in a cost-efficient way.
+            </Typography>
+            <Typography className={classes.presenceText} component="p">
+              Playing our part to be integral to digitalising International
+              trading ecosystem in Singapore with a venture into Trade Tech
             </Typography>
           </Grid>
         </Grid>

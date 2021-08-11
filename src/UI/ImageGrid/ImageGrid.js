@@ -23,11 +23,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "20px",
     minWidth: "250px",
     margin: theme.spacing(2),
+    borderRadius: "10px",
   },
   cardActive: {
     backgroundColor: "#225A41",
     color: "#ffffff",
     minWidth: "250px",
+    borderRadius: "5px",
     margin: theme.spacing(2),
   },
   tabs: {
@@ -51,22 +53,24 @@ export default function ImageGrid(props) {
   const { value, tabDetails, handleChange } = props;
   const classes = useStyles();
   const getCardClass = (isActive) => {
-    return isActive ? clsx(classes.root, classes.cardActive) : classes.root;
+    return isActive
+      ? clsx(classes.root, classes.cardActive)
+      : classes.cardActive;
   };
 
   return (
     <Grid container justify="center" alignItems="center" spacing={3}>
       {tabDetails().map((val, idx) => {
         return (
-          <div>
+          <div justify="center" alignItems="center">
             <Grid key={idx} justify="center" alignItems="center" container item>
               <Grid item>
                 <CardActionArea>
                   <Card
                     className={getCardClass(idx === value)}
-                    onClick={(event) => {
-                      handleChange(event, idx);
-                    }}
+                    // onClick={(event) => {
+                    //   handleChange(event, idx);
+                    // }}
                   >
                     <CardActionArea>
                       <CardMedia
@@ -75,7 +79,7 @@ export default function ImageGrid(props) {
                           <Box
                             className={classes.tabs}
                             style={{
-                              backgroundImage: "url(" + val.image_src + ")"
+                              backgroundImage: "url(" + val.image_src + ")",
                             }}
                           />
                         )}

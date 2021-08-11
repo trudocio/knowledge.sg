@@ -3,7 +3,7 @@ import React from "react";
 
 // Material imports
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid, } from "@material-ui/core";
+import { Container, Typography, Grid } from "@material-ui/core";
 
 // Internal imports
 import experience from "../../../../assets/aboutUs/strengths/experience.svg";
@@ -12,10 +12,10 @@ import services from "../../../../assets/aboutUs/strengths/services.svg";
 import solutions from "../../../../assets/aboutUs/strengths/solutions.svg";
 import speciality from "../../../../assets/aboutUs/strengths/speciality.svg";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   presenceMap: {
     marginTop: "11px",
-    maxHeight: "350px"
+    maxHeight: "350px",
   },
   presenceText: {
     fontFamily: "'Poppins', serif",
@@ -23,14 +23,14 @@ const useStyles = makeStyles(theme => ({
     fontSize: "17px",
     marginTop: "20px",
     marginBottom: "20px",
-    lineHeight: "25px"
+    lineHeight: "25px",
   },
   strengthImageBlock: {
-    display: "flex"
+    display: "flex",
   },
   ImageBlock: {
-    minWidth: "300px"
-  }
+    minWidth: "300px",
+  },
 }));
 
 export default function Strengths(props) {
@@ -225,15 +225,7 @@ export default function Strengths(props) {
                 className={classes.strengthImageBlock}
                 justify="center"
                 item
-              >
-                <Typography
-                  className={classes.presenceText}
-                  component="p"
-                  align="center"
-                >
-                  Professional team with specific domain knowledge
-                </Typography>
-              </Grid>
+              ></Grid>
             </Grid>
           </Grid>
           {/* <Grid
