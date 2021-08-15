@@ -18,6 +18,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import emailjs from "emailjs-com";
 const useStyles = makeStyles((theme) => ({
   requestButton: {
     backgroundColor: "#225A41",
@@ -125,7 +126,6 @@ const useStyles = makeStyles((theme) => ({
   },
   selectValue: {
     marginRight: "30px",
-    
   },
   selectEnergy: {
     marginRight: "78px",
@@ -252,6 +252,25 @@ export default function Calculators(props) {
 
   const handleCloseCal = () => {
     setOpenCal(false);
+  };
+
+  const handleSubmit = (e) => {
+    console.log("Hey");
+    emailjs
+      .sendForm(
+        "service_ir7z4wd",
+        "template_ghgfxva",
+        e.target,
+        "user_4uolgdqidKn7p76iPcsYP"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
   return (
     <Grid container xs={12} key={key} justify="center" alignItems="center">
@@ -491,7 +510,7 @@ export default function Calculators(props) {
               />
             </form>
             <Button
-              onClick={handleClose}
+              onClick={handleSubmit}
               className={clsx(classes.buttonText, classes.button)}
             >
               SUBMIT REQUEST

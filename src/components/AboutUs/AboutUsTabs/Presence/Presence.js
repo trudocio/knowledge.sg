@@ -3,21 +3,21 @@ import React from "react";
 
 // Material imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Container, Typography, Grid, } from "@material-ui/core";
+import { Container, Typography, Grid } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 
 // Internal imports
 import presenceMap from "../../../../assets/aboutUs/presence/maps.png";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   presenceMap: {
     [theme.breakpoints.down("xs")]: {
       marginTop: "11px",
       height: "100%",
-      width: "100%"
+      width: "100%",
     },
     marginTop: "11px",
-    maxHeight: "350px"
+    maxHeight: "350px",
   },
   presenceText: {
     fontFamily: "'Poppins', serif",
@@ -25,14 +25,14 @@ const useStyles = makeStyles(theme => ({
     fontSize: "17px",
     marginTop: "20px",
     marginBottom: "20px",
-    lineHeight: "25px"
-  }
+    lineHeight: "25px",
+  },
 }));
 
 export default function Presence(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs","md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   return (
     <React.Fragment>
       <Container>
@@ -68,25 +68,26 @@ export default function Presence(props) {
               align={screenSmall ? "center" : "flex-start"}
               className={classes.presenceText}
             >
-              Deep understanding and core relationships in our footprint
-              countries of India, China, Indonesia, Australia, South Africa,
-              Chile, Laos, Vietnam and Singapore.
+              KISS has benefitted from proximity to origin markets like
+              Indonesia and Australia and demand markets like India and China.
             </Typography>
             <Typography
               align={screenSmall ? "center" : "flex-start"}
               className={classes.presenceText}
               component="p"
             >
-              Provide multimodal logistics and commodity solutions in our
-              footprint.
+              We have a deep understanding and core relationships in our
+              footprint countries of India, China, Indonesia, Australia, South
+              Africa, Chile, Laos, Vietnam and Singapore, providing multimodal
+              logistics and commodity solutions in our footprint.
             </Typography>
             <Typography
               align={screenSmall ? "center" : "flex-start"}
               className={classes.presenceText}
               component="p"
             >
-              Physical execution controlled by our own industry-leading credit,
-              operations and risk management team based in Singapore
+              The physical execution is controlled by our own industry-leading
+              credit, operations and risk management team based in Singapore.
             </Typography>
           </Grid>
         </Grid>

@@ -6,7 +6,15 @@ import { Container, Typography, Grid, useMediaQuery } from "@material-ui/core";
 
 // Internal imports
 import businessCoal from "../../../../assets/aboutUs/business/business_coal.png";
-
+import experience from "../../../../assets/aboutUs/strengths/experience.svg";
+import baseMetals from "../../../../assets/products/baseMetals.png";
+import EnergyCoal from "../../../../assets/products/EnergyCoal.png";
+import Commercial from "../../../../assets/products/Commercial.png";
+import Digital from "../../../../assets/products/Digital.png";
+import BulkTrading from "../../../../assets/products/BulkTrading.png";
+import BulkShipping from "../../../../assets/products/BulkShipping.png";
+import Logistics from "../../../../assets/products/Logistics.png";
+import Finance from "../../../../assets/products/Finance.png";
 const useStyles = makeStyles((theme) => ({
   presenceMap: {
     [theme.breakpoints.down("xs")]: {
@@ -17,7 +25,60 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "11px",
     maxHeight: "350px",
   },
+  strengthImageBlock: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  ImageBlock: {
+    minWidth: "100px",
+    minHeight: "200px",
+  },
+  presenceMapImg1: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
+  presenceMapImg2: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
+  presenceMapImg3: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
+  presenceMapImg4: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
+  presenceMapImg5: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
+  presenceMapImg6: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
+  presenceMapImg7: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "60px",
+  },
   presenceText: {
+    fontFamily: "Poppins",
+    fontStyle: "normal",
+    fontSize: "12px",
+    height: "50px",
+    width: "300px",
+    marginTop: "10px",
+    marginBottom: "10px",
+    lineHeight: "18px",
+  },
+  presenceTextMain: {
     fontFamily: "Poppins",
     fontStyle: "normal",
     fontSize: "17px",
@@ -34,56 +95,285 @@ export default function Business(props) {
   return (
     <React.Fragment>
       <Container>
-        <Grid
-          container
-          direction={screenSmall ? "column" : "row"}
-          justify="space-between"
-          alignItems="center"
-          spacing={screenSmall ? 0 : 3}
-        >
-          <Grid
-            key={0}
-            xs={screenSmall ? 12 : 6}
-            justify="center"
-            alignItems="center"
-            item
-          >
-            <img
-              src={businessCoal}
-              className={classes.presenceMap}
-              alt="Presence Map"
-            />
+        <Typography className={classes.presenceTextMain} align="center">
+          Part of Knowledge Group, Knowledge Singapore has built a diversified
+          business both in terms of markets and products in addition to the
+          legacy of being a highly successful merchant coal trading company. Our
+          diversified business includes-
+        </Typography>
+        <Grid container justify="center" alignItems="center" spacing={0}>
+          <Grid key={0} xs={8} justify="center" container>
+            <Grid
+              key={0}
+              xs={4}
+              className={classes.ImageBlock}
+              justify="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={12}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="flex-start"
+                item
+              >
+                <img
+                  src={EnergyCoal}
+                  className={classes.presenceMapImg1}
+                  alt="Presence Map"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Energy coal origination
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid
+              key={0}
+              xs={4}
+              className={classes.ImageBlock}
+              justify="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={12}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="flex-start"
+                item
+              >
+                <img
+                  src={BulkShipping}
+                  className={classes.presenceMapImg2}
+                  alt="Presence Map"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Dry bulk shipping
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid
+              key={0}
+              xs={4}
+              className={classes.ImageBlock}
+              justify="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={12}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="flex-start"
+                item
+              >
+                <img
+                  src={BulkTrading}
+                  className={classes.presenceMapImg3}
+                  alt="Presence Map"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Physical bulk commodity trading
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid
-            key={1}
-            xs={screenSmall ? 12 : 6}
-            justify="center"
-            alignItems="center"
-            item
-          >
-            <Typography className={classes.presenceText} component="p">
-              Part of Knowledge Group, Knowledge Singapore is a leading merchant
-              of Energy and Metallurgical products like Thermal Coal, Iron Ore,
-              Chrome Ore.
-            </Typography>
-            <Typography className={classes.presenceText} component="p">
-              An end to end logistics partner with proven expertise in up-stream
-              and down-stream.
-            </Typography>
-            <Typography className={classes.presenceText} component="p">
-              In-house expertise in shipping and leverage our experience,
-              volumes and scale to offer optimized solutions to our customers
-              delivering to the port of their choice.
-            </Typography>
-            <Typography className={classes.presenceText} component="p">
-              Consulting on techno-commercial issues is an integrated part of
-              our business. Right product delivered from Mine to the Plant using
-              multimodal transport in a cost-efficient way.
-            </Typography>
-            <Typography className={classes.presenceText} component="p">
-              Playing our part to be integral to digitalising International
-              trading ecosystem in Singapore with a venture into Trade Tech
-            </Typography>
+          <Grid key={0} xs={12} justify="center" container>
+            <Grid
+              key={0}
+              xs={3}
+              className={classes.ImageBlock}
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={6}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="flex-start"
+                item
+              >
+                <img
+                  src={Logistics}
+                  className={classes.presenceMapImg4}
+                  alt="Attractive Solutions"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Land-based and sea borne logistics
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid
+              key={0}
+              xs={3}
+              className={classes.ImageBlock}
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <img
+                  src={Finance}
+                  className={classes.presenceMapImg5}
+                  alt="Attractive Solutions"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Related trade finance and risk management
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid
+              key={0}
+              xs={3}
+              className={classes.ImageBlock}
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <img
+                  src={Commercial}
+                  className={classes.presenceMapImg6}
+                  alt="Attractive Solutions"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Consulting on techno-commercial issues & structured merchant
+                  financing
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid
+              key={0}
+              xs={3}
+              className={classes.ImageBlock}
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <img
+                  src={Digital}
+                  className={classes.presenceMapImg7}
+                  alt="Attractive Solutions"
+                />
+              </Grid>
+              <Grid
+                key={0}
+                xs={8}
+                className={classes.strengthImageBlock}
+                justify="center"
+                alignItems="center"
+                item
+              >
+                <Typography
+                  className={classes.presenceText}
+                  component="p"
+                  align="center"
+                >
+                  Digitalising the international trading ecosystem
+                  with a recent venture into Trade Tech
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Container>

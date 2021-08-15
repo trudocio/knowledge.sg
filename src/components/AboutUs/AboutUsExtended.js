@@ -81,8 +81,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#292828",
   },
   activeTab: {
-    color: "#ffffff",
-    backgroundColor: "#225A41",
+    color: "#225A41",
+    // backgroundColor: "#225A41",
   },
   tabLeft: {
     borderLeft: "unset",
@@ -153,7 +153,7 @@ export default function AboutUsExtended(props) {
                       : classes.heading
                   }
                 >
-                  OUR PRESENCE
+                  OUR FOOTPRINT
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -184,7 +184,7 @@ export default function AboutUsExtended(props) {
                 <Business />
               </AccordionDetails>
             </Accordion>
-            <Accordion
+            {/* <Accordion
               className={classes.accordian}
               expanded={expanded === "panel3"}
               onChange={handleExpand("panel3")}
@@ -207,7 +207,7 @@ export default function AboutUsExtended(props) {
               <AccordionDetails>
                 <Management />
               </AccordionDetails>
-            </Accordion>
+            </Accordion> */}
             <Accordion
               className={classes.accordian}
               expanded={expanded === "panel4"}
@@ -246,16 +246,19 @@ export default function AboutUsExtended(props) {
                 >
                   <Tab
                     className={clsx(getTabClass(value === 0), classes.tabLeft)}
-                    label="PRESENCE"
+                    label="OUR FOOTPRINT"
                   />
-                  <Tab className={getTabClass(value === 1)} label="BUSINESS" />
                   <Tab
+                    className={getTabClass(value === 1)}
+                    label="OUR BUSINESS"
+                  />
+                  {/* <Tab
                     className={getTabClass(value === 2)}
                     label="MANAGEMENT"
-                  />
+                  /> */}
                   <Tab
-                    className={clsx(getTabClass(value === 3), classes.tabRight)}
-                    label="STRENGTHS"
+                    className={clsx(getTabClass(value === 2), classes.tabRight)}
+                    label="OUR STRENGTHS"
                   />
                 </Tabs>
               </Paper>
@@ -286,18 +289,18 @@ export default function AboutUsExtended(props) {
               >
                 <Business />
               </TabPanel>
-              <TabPanel
+              {/* <TabPanel
                 style={{ height: "600px" }}
                 value={value}
                 index={2}
                 dir={theme.direction}
               >
                 <Management />
-              </TabPanel>
+              </TabPanel> */}
               <TabPanel
                 style={{ height: "600px" }}
                 value={value}
-                index={3}
+                index={2}
                 dir={theme.direction}
               >
                 <Strengths />
