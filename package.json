@@ -1,5 +1,6 @@
 {
   "name": "knowledge.sg",
+  "home":"/knowledge.sg/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
