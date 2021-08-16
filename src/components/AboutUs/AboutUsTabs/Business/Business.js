@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontSize: "17px",
     marginTop: "20px",
-    marginBottom: "20px",
+    marginBottom: "50px",
     lineHeight: "25px",
   },
 }));

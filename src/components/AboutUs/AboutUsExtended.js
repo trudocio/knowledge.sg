@@ -25,7 +25,7 @@ import { Business, Presence, Management, Strengths } from "./AboutUsTabs/index";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: "50px",
+    marginTop: "100px",
     marginBottom: "20px",
   },
   root: {
@@ -66,23 +66,22 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     borderRight: "1px solid #000000",
-    borderLeft: "1px solid #000000",
+    // borderLeft: "1px solid #000000",
     fontFamily: "Poppins",
     fontStyle: "normal",
     fontWeight: "normal",
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "20px",
-    },
-    [theme.breakpoints.between("sm", "md")]: {
-      fontSize: "14px",
-    },
+    // [theme.breakpoints.down("xs")]: {
+    //   fontSize: "20px",
+    // },
+    // [theme.breakpoints.between("sm", "md")]: {
+    //   fontSize: "14px",
+    // },
     fontSize: "18px",
     letterSpacing: 0.8,
     color: "#292828",
   },
   activeTab: {
     color: "#225A41",
-    // backgroundColor: "#225A41",
   },
   tabLeft: {
     borderLeft: "unset",
@@ -245,13 +244,14 @@ export default function AboutUsExtended(props) {
                   aria-label="About us options"
                 >
                   <Tab
-                    className={clsx(getTabClass(value === 0), classes.tabLeft)}
-                    label="OUR FOOTPRINT"
-                  />
-                  <Tab
-                    className={getTabClass(value === 1)}
+                    className={(getTabClass(value === 0))}
                     label="OUR BUSINESS"
                   />
+                  <Tab
+                    className={clsx(getTabClass(value === 1))}
+                    label="OUR FOOTPRINT"
+                  />
+
                   {/* <Tab
                     className={getTabClass(value === 2)}
                     label="MANAGEMENT"
@@ -279,7 +279,7 @@ export default function AboutUsExtended(props) {
                 index={0}
                 dir={theme.direction}
               >
-                <Presence />
+                <Business />
               </TabPanel>
               <TabPanel
                 style={{ height: "600px" }}
@@ -287,7 +287,7 @@ export default function AboutUsExtended(props) {
                 index={1}
                 dir={theme.direction}
               >
-                <Business />
+                <Presence />
               </TabPanel>
               {/* <TabPanel
                 style={{ height: "600px" }}

@@ -24,11 +24,45 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: "#ffffff",
   },
+  paper: {
+    fontFamily: "Poppins",
+    paddingTop: "5px",
+    paddingBottom: "20px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    borderWidth: 1,
+    fontSize: "14px",
+    borderColor: "#225A41",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "7px",
+    border: "1px solid #225A41;",
+    textAlign: "center",
+  },
+  heading: {
+    display: "flex",
+    fontFamily: "Poppins",
+    padding: "12px",
+    borderWidth: 1,
+    fontSize: "14px",
+    fontWeight: 600,
+    color: "#225A41",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
   heroText: {
     fontFamily: "'Poppins', serif",
     fontStyle: "normal",
     fontSize: "18px",
     marginTop: "20px",
+    marginBottom: "20px",
+  },
+  heroTextValue: {
+    fontFamily: "'Poppins', serif",
+    fontStyle: "normal",
+    fontSize: "18px",
+    marginTop: "10px",
     marginBottom: "20px",
   },
   presenceText: {
@@ -42,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   heroDetailsTitle: {
     fontWeight: "600",
     fontSize: "25px",
-    lineHeight: "95%",
+    lineHeight: "20%",
     letterSpacing: "0.01em",
     color: "#225A41",
   },
@@ -84,9 +118,9 @@ const heroDetails = () => {
   return [
     { title: "18+ years", text: "of operations as Knowledge Group" },
     { title: "10+ years", text: "of operations in Singapore" },
-    { title: "85+", text: "satisfied clients" },
-    { title: ">25.0 MMT", text: "of products delivered" },
-    { title: ">30", text: "vessels handled annually" },
+    { title: "100+", text: "satisfied clients" },
+    { title: ">30 MMT", text: "of products delivered" },
+    { title: ">300", text: "vessels handled" },
   ];
 };
 
@@ -117,7 +151,7 @@ export default function Products(props) {
           style={
             useMediaQuery(theme.breakpoints.down("md"))
               ? { marginTop: "0px" }
-              : { marginTop: "-220px" }
+              : { marginTop: "-200px" }
           }
           spacing={3}
         >
@@ -148,7 +182,10 @@ export default function Products(props) {
                     {value.title}
                   </Typography>
                   <Typography
-                    className={clsx(classes.heroText, classes.heroDetailsText)}
+                    className={clsx(
+                      classes.heroTextValue,
+                      classes.heroDetailsText
+                    )}
                     component="p"
                     align="center"
                   >
@@ -159,13 +196,40 @@ export default function Products(props) {
             })}
           </Grid>
           <Typography className={classes.presenceText} align="center">
-            Knowledge International Strategy Systems (KISS) was incorporated in
-            2010 with a view to build on the Group’s knowledge, resources and
-            network in coal business and to leverage Singapore’s pro-business
-            policies and deep financial, trading and shipping ecosystem. As a
-            Global Trader Program (GTP) member trader in Singapore, KISS has
-            benefitted from proximity to Indonesia and Australia.
+            Incorporated in 2010, Knowledge International Strategy Systems
+            (KISS) is a leading merchant of Energy, Metals and Minerals based in
+            Singapore. As a Global Trader Program (GTP) member trader, KISS has
+            benefitted from Singapore’s pro-business policies and deep
+            Financial, Trading and Shipping ecosystem. We are also playing our
+            part to be integral to digitalizing the international trading
+            ecosystem in Singapore with a venture into TradeTech.
           </Typography>
+          <Grid item xs={6}>
+            <div className={classes.paper}>
+              <Typography className={classes.heading}>TRADING</Typography>
+              Knowledge International Strategy Systems (KISS) was incorporated
+              with a view to build on the Knowledge Group’s knowledge,
+              resources, and network in coal business and to leverage
+              Singapore’s pro-business policies and deep financial, trading and
+              shipping ecosystem. As a Global Trader Program (GTP) member trader
+              in Singapore, KISS has benefitted from proximity to Indonesia and
+              Australia as key origination markets as well as key demand markets
+              of India & China.
+            </div>
+          </Grid>
+          <Grid item xs={6}>
+            <div className={classes.paper}>
+              <Typography className={classes.heading}>TRADETECH</Typography>
+              Enabling SMEs to lead digital transformation to propel the ‘Smart
+              Nation’ agenda by creating an open, customizable, interconnected,
+              and interoperable solution for trade digitalization.  With deep
+              insights into trading and logistics and the benefit of experience
+              and network, KISS wants to participate in the Singapore
+              government’s push towards a “Smart Nation” by contributing in its
+              area of expertise. We believe SME space can be a big contributor
+              to this agenda by playing its part as “Digital Leaders”
+            </div>
+          </Grid>
         </Grid>
       </Container>
       {children}
