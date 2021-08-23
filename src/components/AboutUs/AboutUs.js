@@ -9,10 +9,11 @@ import {
   Typography,
   Container,
   useMediaQuery,
+  Box,
   CardMedia,
   Hidden,
 } from "@material-ui/core";
-
+import { shadows } from '@material-ui/system';
 // Internal Imports
 import { Calculators, HeroImage } from "../../UI";
 
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "7px",
     border: "1px solid #225A41;",
     textAlign: "center",
+    height:"250px"
   },
   heading: {
     display: "flex",
@@ -205,30 +207,29 @@ export default function Products(props) {
             ecosystem in Singapore with a venture into TradeTech.
           </Typography>
           <Grid item xs={6}>
-            <div className={classes.paper}>
+            <Box boxShadow={5} className={classes.paper}>
               <Typography className={classes.heading}>TRADING</Typography>
               Knowledge International Strategy Systems (KISS) was incorporated
               with a view to build on the Knowledge Group’s knowledge,
               resources, and network in coal business and to leverage
               Singapore’s pro-business policies and deep financial, trading and
-              shipping ecosystem. As a Global Trader Program (GTP) member trader
+              shipping ecosystem.<p> As a Global Trader Program (GTP) member trader
               in Singapore, KISS has benefitted from proximity to Indonesia and
               Australia as key origination markets as well as key demand markets
-              of India & China.
-            </div>
+              of India & China.</p>
+            </Box>
           </Grid>
           <Grid item xs={6}>
-            <div className={classes.paper}>
+            <Box boxShadow={5}  className={classes.paper}>
               <Typography className={classes.heading}>TRADETECH</Typography>
-              Enabling SMEs to lead digital transformation to propel the ‘Smart
-              Nation’ agenda by creating an open, customizable, interconnected,
-              and interoperable solution for trade digitalization.  With deep
-              insights into trading and logistics and the benefit of experience
+              With deep insights into trading and logistics and the benefit of experience
               and network, KISS wants to participate in the Singapore
               government’s push towards a “Smart Nation” by contributing in its
               area of expertise. We believe SME space can be a big contributor
-              to this agenda by playing its part as “Digital Leaders”
-            </div>
+              to this agenda by playing its part as “Digital Leaders”.<p>Enabling SMEs to lead digital transformation to propel the ‘Smart
+              Nation’ agenda by creating an open, customizable, interconnected,
+              and interoperable solution for trade digitalization.</p>
+            </Box>
           </Grid>
         </Grid>
       </Container>

@@ -91,7 +91,7 @@ export default function ContactUs(props) {
             item
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8334075361654!2d103.84150241470127!3d1.2731186990714265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1979b8245339%3A0xb08b46351c837b65!2sFuji%20Xerox%20Towers!5e0!3m2!1sen!2sin!4v1608382729901!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8238879546525!2d103.84558971460535!3d1.2792567621548998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1912878b53cf%3A0x53065b0b79e3b316!2s180%20Cecil%20St%2C%2010%2001%20Bangkok%20Bank%20Building%2C%20Singapore%20069546!5e0!3m2!1sen!2sin!4v1629464764319!5m2!1sen!2sin"
               width={screenSmall ? "500px" : "683px"}
               height="500px"
               frameborder="0"

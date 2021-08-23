@@ -370,7 +370,7 @@ export default function Business(props) {
                   align="center"
                 >
                   Digitalising the international trading ecosystem
-                  with a recent venture into Trade Tech
+                  with a venture into Trade Tech
                 </Typography>
               </Grid>
             </Grid>

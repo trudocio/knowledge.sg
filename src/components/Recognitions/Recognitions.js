@@ -52,9 +52,9 @@ const heroDetails = () => {
   return [
     { title: "18+ years", text: "of operations as Knowledge Group" },
     { title: "10+ years", text: "of operations in Singapore" },
-    { title: "85+", text: "satisfied clients" },
-    { title: ">25.0 MMT", text: "of products delivered" },
-    { title: ">30", text: "vessels handled annually" },
+    { title: "100+", text: "satisfied clients" },
+    { title: ">30 MMT", text: "of products delivered" },
+    { title: ">300", text: "vessels handled" },
   ];
 };
 
