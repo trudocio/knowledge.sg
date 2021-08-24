@@ -268,7 +268,7 @@ export default function AboutUsExtended(props) {
               onChangeIndex={handleChangeIndex}
             >
               <TabPanel
-                style={{ height: "600px" }}
+                style={{ height: "650px" }}
                 value={value}
                 index={0}
                 dir={theme.direction}
@@ -276,7 +276,7 @@ export default function AboutUsExtended(props) {
                 <Business />
               </TabPanel>
               <TabPanel
-                style={{ height: "600px" }}
+                style={{ height: "650px" }}
                 value={value}
                 index={1}
                 dir={theme.direction}
@@ -292,7 +292,7 @@ export default function AboutUsExtended(props) {
                 <Management />
               </TabPanel> */}
               <TabPanel
-                style={{ height: "600px" }}
+                style={{ height: "650px" }}
                 value={value}
                 index={2}
                 dir={theme.direction}

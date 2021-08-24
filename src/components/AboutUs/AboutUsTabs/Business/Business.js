@@ -103,13 +103,17 @@ export default function Business(props) {
           diversified business includes-
         </Typography>
         <Grid
-          style={{ overflow: "hidden" }}
           container
           justify="center"
           alignItems="center"
           spacing={0}
         >
-          <Grid key={0} xs={8} justify="center" container>
+          <Grid
+            key={0}
+            xs={8}
+            justify="center"
+            container
+          >
             <Grid
               key={0}
               xs={4}

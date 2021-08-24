@@ -1,6 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  max-zoom: "90%";
+  max-zoom: "80%";
   font-family: sans-serif;
+}
+@viewport {
+  zoom: 1.0;
+  min-zoom: 1.0;
+  max-zoom: 2.0;
 }
