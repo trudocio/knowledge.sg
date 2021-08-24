@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/knowledge.sg/static/css/main.3cffaad5.chunk.css",
-    "main.js": "/knowledge.sg/static/js/main.d8e5ab87.chunk.js",
-    "main.js.map": "/knowledge.sg/static/js/main.d8e5ab87.chunk.js.map",
+    "main.js": "/knowledge.sg/static/js/main.cd37e839.chunk.js",
+    "main.js.map": "/knowledge.sg/static/js/main.cd37e839.chunk.js.map",
     "runtime-main.js": "/knowledge.sg/static/js/runtime-main.febb43c7.js",
     "runtime-main.js.map": "/knowledge.sg/static/js/runtime-main.febb43c7.js.map",
     "static/css/2.c8c50e7f.chunk.css": "/knowledge.sg/static/css/2.c8c50e7f.chunk.css",
@@ -20,10 +20,12 @@
     "static/media/Finance.e7c7c82e.png": "/knowledge.sg/static/media/Finance.e7c7c82e.png",
     "static/media/Logistics.e7b2fdef.png": "/knowledge.sg/static/media/Logistics.e7b2fdef.png",
     "static/media/Shipping.af878de1.png": "/knowledge.sg/static/media/Shipping.af878de1.png",
+    "static/media/ShippingMobile.03f5bf98.png": "/knowledge.sg/static/media/ShippingMobile.03f5bf98.png",
     "static/media/baseMetals.c3b7d16d.png": "/knowledge.sg/static/media/baseMetals.c3b7d16d.png",
     "static/media/business_coal.14bd4e7b.png": "/knowledge.sg/static/media/business_coal.14bd4e7b.png",
     "static/media/coalCalculator.e337b356.svg": "/knowledge.sg/static/media/coalCalculator.e337b356.svg",
     "static/media/csr.6ced15aa.png": "/knowledge.sg/static/media/csr.6ced15aa.png",
+    "static/media/csrMobile.c0f515b2.png": "/knowledge.sg/static/media/csrMobile.c0f515b2.png",
     "static/media/energy.1bd654e9.png": "/knowledge.sg/static/media/energy.1bd654e9.png",
     "static/media/experience.2281b670.svg": "/knowledge.sg/static/media/experience.2281b670.svg",
     "static/media/giri.fe37b142.png": "/knowledge.sg/static/media/giri.fe37b142.png",
@@ -44,6 +46,6 @@
     "static/css/2.c8c50e7f.chunk.css",
     "static/js/2.2eeba198.chunk.js",
     "static/css/main.3cffaad5.chunk.css",
-    "static/js/main.d8e5ab87.chunk.js"
+    "static/js/main.cd37e839.chunk.js"
   ]
 }
