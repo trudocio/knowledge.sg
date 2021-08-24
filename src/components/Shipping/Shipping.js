@@ -17,7 +17,7 @@ import { Calculators, HeroImage, LinedText } from "../../UI";
 
 // Image Imports
 import shipyard from "../../assets/products/Shipping.png";
-
+import shipyardMobile from "../../assets/products/ShippingMobile.png";
 const useStyles = makeStyles((theme) => ({
   paper: {
     [theme.breakpoints.down("sm")]: {
@@ -104,7 +104,7 @@ export default function Shipping(props) {
       <Container className={classes.root}>
         <Grid container justify="center" alignItems="center" spacing={3}>
           {screenSmall ? (
-            <HeroImage image_src={shipyard} />
+            <HeroImage image_src={shipyardMobile} />
           ) : (
             <img
               src={shipyard}

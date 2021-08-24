@@ -10,7 +10,7 @@ import { Calculators, HeroImage, LinedText } from "../../UI";
 
 // Image Imports
 import shipyard from "../../assets/aboutUs/csr.png";
-
+import shipyardMobile from "../../assets/aboutUs/csrMobile.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("sm")]: {
@@ -113,7 +113,7 @@ export default function Csr(props) {
       <Container className={classes.root}>
         <Grid container justify="center" alignItems="center" spacing={3}>
           {screenSmall ? (
-            <HeroImage image_src={shipyard} />
+            <HeroImage image_src={shipyardMobile} />
           ) : (
             <img
               src={shipyard}

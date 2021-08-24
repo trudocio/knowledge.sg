@@ -102,7 +102,13 @@ export default function Business(props) {
           legacy of being a highly successful merchant coal trading company. Our
           diversified business includes-
         </Typography>
-        <Grid container justify="center" alignItems="center" spacing={0}>
+        <Grid
+          style={{ overflow: "hidden" }}
+          container
+          justify="center"
+          alignItems="center"
+          spacing={0}
+        >
           <Grid key={0} xs={8} justify="center" container>
             <Grid
               key={0}

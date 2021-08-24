@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "8px",
     outline: "none",
     height: "250px",
-    width: "300px",
+    width: "350px",
     alignItems: "center",
     justifyContent: "center",
     overflow: "auto",
