@@ -70,12 +70,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontStyle: "normal",
     fontWeight: "normal",
-    // [theme.breakpoints.down("xs")]: {
-    //   fontSize: "20px",
-    // },
-    // [theme.breakpoints.between("sm", "md")]: {
-    //   fontSize: "14px",
-    // },
     fontSize: "18px",
     letterSpacing: 0.8,
     color: "#292828",
@@ -85,18 +79,18 @@ const useStyles = makeStyles((theme) => ({
   },
   tabLeft: {
     borderLeft: "unset",
-    fontSize: "20px",
+    fontSize: "18px",
     fontFamily: "Poppins",
     letterSpacing: 0.8,
   },
   tabcenter: {
-    fontSize: "20px",
+    fontSize: "18px",
     fontFamily: "Poppins",
     letterSpacing: 0.8,
   },
   tabRight: {
     borderRight: "unset",
-    fontSize: "20px",
+    fontSize: "18px",
     fontFamily: "Poppins",
     letterSpacing: 0.8,
   },
@@ -248,13 +242,13 @@ export default function AboutUsExtended(props) {
                     label="OUR BUSINESS"
                   />
                   <Tab
-                    className={clsx(getTabClass(value === 1))}
+                    className={clsx(getTabClass(value === 1), classes.tabLeft)}
                     label="OUR FOOTPRINT"
                   />
 
                   {/* <Tab
                     className={getTabClass(value === 2)}
-                    label="MANAGEMENT"
+                    // label="MANAGEMENT"
                   /> */}
                   <Tab
                     className={clsx(getTabClass(value === 2), classes.tabRight)}

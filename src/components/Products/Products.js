@@ -118,7 +118,7 @@ export default function Products(props) {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: screenSmall ? "-60px" :"100px",
+          marginTop: screenSmall ? "-100px" :"100px",
         }}
       >
         <ImageGrid

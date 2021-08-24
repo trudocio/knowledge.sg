@@ -55,18 +55,22 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Bree Serif', serif",
     fontStyle: "normal",
     fontWeight: "normal",
-    lineHeight: "48px",
+
     /* identical to box height */
     letterSpacing: "0.2em",
     color: "#292828",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "15px",
+      fontSize: "12px",
+      // marginTop: "20px",
+      lineHeight: "14px",
     },
     [theme.breakpoints.only("md")]: {
       fontSize: "18px",
+      lineHeight: "48px",
     },
     [theme.breakpoints.between("lg", "xl")]: {
       fontSize: "24px",
+      lineHeight: "48px",
     },
   },
   tab: {
@@ -124,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 20000,
     height: "47px",
     marginTop: "20px",
+    marginBottom: "20px",
   },
   inlineHeading: {
     fontSize: "15px",
@@ -331,13 +336,14 @@ export function NavBar(props) {
                 alt="Knowledge Global Singapore Logo"
               />
             </Box>
-            <Typography
-              className={classes.titleDetail}
-              variant="h5"
-              align="center"
-            >
-              KISSPL
-            </Typography>
+            <Box alignItems="center" justify="center" style={{marginBottom:"10px"}}>
+              <Typography className={classes.title} variant="h2" align="center">
+                KNOWLEDGE INTERNATIONAL
+              </Typography>
+              <Typography className={classes.title} variant="h2" align="center">
+                STRATEGY SYSTEMS PTE. LTD.
+              </Typography>
+            </Box>
           </Hidden>
           {/* <Hidden mdUp implementation="css">
             <Toolbar className={classes.toolbar}>

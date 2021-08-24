@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-60px",
+      marginTop: "-100px",
     },
   },
   tableHead: {

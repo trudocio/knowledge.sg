@@ -18,10 +18,13 @@ import { shadows } from "@material-ui/system";
 import { Calculators, HeroImage } from "../../UI";
 
 // Image Imports
-import shipyard from "../../assets/aboutUs/shipyard.png";
+import shipyard from "../../assets/aboutUs/shipyard.jpg";
 import knowledge_video from "../../assets/knowledge_video.mp4";
 const useStyles = makeStyles((theme) => ({
   root: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "10px",
+    },
     flexGrow: 1,
     backgroundColor: "#ffffff",
   },
@@ -139,7 +142,7 @@ export default function Products(props) {
   const screenMedium = useMediaQuery(theme.breakpoints.only("md"));
   return (
     <React.Fragment>
-      <Container>
+      <Container className={classes.root}>
         <Hidden mdUp implementation="css">
           <HeroImage image_src={shipyard} />
         </Hidden>
@@ -147,7 +150,8 @@ export default function Products(props) {
           <video
             src={knowledge_video}
             loop
-            autoPlay
+            autoPlay={true}
+            muted
             className={classes.heroVideo}
           />
         </Hidden>

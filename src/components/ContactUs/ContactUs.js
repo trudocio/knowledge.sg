@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: "30px",
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-60px",
+      marginTop: "-100px",
     },
   },
   box: {

@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#225A41",
     color: "#FFFFFF",
     fontWeight: "500",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "14px",
+      marginBottom: "0px",
+    },
     fontSize: "20px",
     marginBottom: "40px",
     marginTop: "40px",
@@ -54,6 +58,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     overflow: "auto",
     padding: theme.spacing(2, 3, 3),
+  },
+  paperSmallCal: {
+    backgroundColor: "#ffffff",
+    borderRadius: "8px",
+    outline: "none",
+    height: "300px",
+    width: "300px",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "auto",
+    padding: theme.spacing(2, 2, 2),
   },
   innerModal: {
     display: "flex",
@@ -175,19 +190,26 @@ const useStyles = makeStyles((theme) => ({
   },
   energy: {
     marginBottom: "20px",
+    [theme.breakpoints.down("sm")]: {
+      width: "80px",
+    },
     width: "100px",
     height: "20px",
   },
   selectValue: {
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "10px",
+    },
     marginRight: "30px",
   },
   selectEnergy: {
-    marginRight: "78px",
+    [theme.breakpoints.down("sm")]: {
+      width: "80px",
+      marginRight: "45px",
+    },
     width: "100px",
+    marginRight: "78px",
     height: "20px",
-  },
-  heroText: {
-    fontSize: "16px",
   },
 }));
 const useOutlinedInputStyles = makeStyles((theme) => ({
@@ -374,7 +396,7 @@ export default function Calculators(props) {
         }}
       >
         <Fade in={openCal}>
-          <div className={classes.paper}>
+          <div className={classes.paperSmallCal}>
             <div
               style={{
                 display: "flex",
@@ -395,7 +417,11 @@ export default function Calculators(props) {
             </div>
             <div style={{ marginTop: "-50px" }}>
               <h3>Coal Conversions for Traders</h3>
-              <p style={{ fontSize: "13px" }}>
+              <p
+                style={
+                  screenSmall ? { fontSize: "10px" } : { fontSize: "13px" }
+                }
+              >
                 CONVERT COAL ENRGY FROM THE GIVEN BASIS TO DESIRED BASIS
               </p>
               <form id="SEcalc" name="SEcalc">
@@ -431,12 +457,16 @@ export default function Calculators(props) {
                     <input
                       name="UnitFromValue"
                       type="text"
-                      size="20"
+                      size={screenSmall ? "14" : "20"}
                       onChange={CalcSEUnits}
                     />
                   </div>
                   <div className={classes.selectValue}>
-                    <input name="UnitToValue" type="text" size="20" />
+                    <input
+                      name="UnitToValue"
+                      type="text"
+                      size={screenSmall ? "14" : "20"}
+                    />
                   </div>
                 </div>
               </form>

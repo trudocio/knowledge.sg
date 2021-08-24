@@ -2,8 +2,8 @@
 import React from "react";
 
 // Material Imports
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Container } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid, Container, useMediaQuery } from "@material-ui/core";
 
 // Internal Imports
 import { Calculators, HeroImage, LinedText } from "../../UI";
@@ -14,7 +14,7 @@ import shipyard from "../../assets/aboutUs/csr.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-60px",
+      marginTop: "20px",
     },
   },
 }));
@@ -106,15 +106,20 @@ const tabDetails = () => {
 export default function Csr(props) {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
-
+  const theme = useTheme();
+  const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <React.Fragment>
       <Container className={classes.root}>
         <Grid container justify="center" alignItems="center" spacing={3}>
-          <img
-            src={shipyard}
-            style={{ width: "98%", height: "371px", marginBottom: "20px" }}
-          />
+          {screenSmall ? (
+            <HeroImage image_src={shipyard} />
+          ) : (
+            <img
+              src={shipyard}
+              style={{ width: "98%", height: "371px", marginBottom: "20px" }}
+            />
+          )}
           <LinedText key={1} value={value} tabDetails={tabDetails} />
           <Calculators key={2} />
         </Grid>

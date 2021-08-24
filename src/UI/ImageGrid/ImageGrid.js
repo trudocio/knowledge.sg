@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 
 // Image imports
-import shipyard from "../../assets/aboutUs/shipyard.png";
+import shipyard from "../../assets/aboutUs/shipyard.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {

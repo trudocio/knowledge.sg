@@ -63,7 +63,9 @@ const useStyles = makeStyles((theme) => ({
   },
   tabsPaper: {
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-60px",
+      marginTop: "-80px",
+      paddingLeft:"10px",
+      paddingRight:"10px"
     },
     marginTop: "20px",
   },

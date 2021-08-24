@@ -2,8 +2,15 @@
 import React from "react";
 
 // Material Imports
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Container, Typography, div, Box } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {
+  Grid,
+  Container,
+  Typography,
+  div,
+  Box,
+  useMediaQuery,
+} from "@material-ui/core";
 
 // Internal Imports
 import { Calculators, HeroImage, LinedText } from "../../UI";
@@ -31,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     [theme.breakpoints.down("sm")]: {
-      marginTop: "-60px",
+      marginTop: "20px",
     },
   },
 }));
@@ -90,15 +97,20 @@ const tabDetails = () => {
 export default function Shipping(props) {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
-
+  const theme = useTheme();
+  const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <React.Fragment>
       <Container className={classes.root}>
         <Grid container justify="center" alignItems="center" spacing={3}>
-          <img
-            src={shipyard}
-            style={{ width: "98%", height: "371px", marginBottom: "20px" }}
-          />
+          {screenSmall ? (
+            <HeroImage image_src={shipyard} />
+          ) : (
+            <img
+              src={shipyard}
+              style={{ width: "98%", height: "371px", marginBottom: "20px" }}
+            />
+          )}
           <Typography
             align="center"
             style={{ marginBottom: "40px", fontFamily: "Poppins" }}
