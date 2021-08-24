@@ -56,14 +56,14 @@ const useStyles = makeStyles((theme) => ({
     width: "300px",
     alignItems: "center",
     justifyContent: "center",
-    overflow: "auto",
+    overflowY: "auto",
     padding: theme.spacing(2, 3, 3),
   },
   paperSmallCal: {
     backgroundColor: "#ffffff",
     borderRadius: "8px",
     outline: "none",
-    height: "300px",
+    height: "250px",
     width: "300px",
     alignItems: "center",
     justifyContent: "center",
@@ -357,7 +357,7 @@ export default function Calculators(props) {
         xs={12}
         justify="center"
         alignItems="center"
-        spacing={3}
+        spacing={0}
         container
       >
         <Grid key={0} justify="center" alignItems="center" item>
@@ -381,7 +381,12 @@ export default function Calculators(props) {
             aria-label="coal calculator"
             size="medium"
           >
-            <img src={coalCalculator} alt="Coal Calculator" height="40px"></img>
+            <img
+              src={coalCalculator}
+              alt="Coal Calculator"
+              height="40px"
+              style={screenSmall ? { marginTop: "40px" } : {}}
+            ></img>
           </IconButton>
         </Grid>
       </Grid>

@@ -124,11 +124,13 @@ const useStyles = makeStyles((theme) => ({
     height: "137.94px",
   },
   logoMobile: {
-    width: "100px",
+    // width: "100px",
     zIndex: 20000,
-    height: "47px",
+    width: "182.17px",
+    height: "86.92px",
+    // height: "47px",
     marginTop: "20px",
-    marginBottom: "20px",
+    marginBottom: "10px",
   },
   inlineHeading: {
     fontSize: "15px",
@@ -184,8 +186,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.only("xs")]: {
       paddingTop: theme.spacing(2),
     },
-    width: "116px",
-    height: "95px",
+    width: "182.17px",
+    height: "86.92px",
   },
 }));
 
@@ -336,7 +338,11 @@ export function NavBar(props) {
                 alt="Knowledge Global Singapore Logo"
               />
             </Box>
-            <Box alignItems="center" justify="center" style={{marginBottom:"10px"}}>
+            <Box
+              alignItems="center"
+              justify="center"
+              style={{ marginBottom: "10px" }}
+            >
               <Typography className={classes.title} variant="h2" align="center">
                 KNOWLEDGE INTERNATIONAL
               </Typography>
