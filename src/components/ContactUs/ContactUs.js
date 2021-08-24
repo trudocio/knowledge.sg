@@ -23,9 +23,18 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "20px",
     height: "39px",
   },
+  root: {
+    marginBottom: "30px",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "-60px",
+    },
+  },
   box: {
     alignItems: "center",
     width: "500px",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "-50px",
+    },
     marginLeft: "70px",
     justifyContent: "center",
     marginBottom: "20px",
@@ -33,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
   text: {
     width: "300px",
     fontFamily: "Poppins",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
+    },
     fontSize: "18px",
     marginLeft: "30px",
   },
@@ -51,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     height: "36px",
   },
   container: {
-    // alignItems: "center",
     justifyContent: "center",
     marginBottom: "20px",
   },
@@ -75,32 +86,35 @@ export default function ContactUs(props) {
   const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
   return (
     <React.Fragment>
-      <Container style={{ marginBottom: "30px" }}>
+      <Container className={classes.root}>
         <Grid
           container
           direction={screenSmall ? "column" : "row"}
           justify="space-between"
           alignItems="center"
-          spacing={screenSmall ? 0 : 3}
         >
           <Grid
             key={0}
-            xs={screenSmall ? 12 : 6}
+            xs={12}
+            md={6}
+            lg={6}
             justify="center"
             alignItems="center"
             item
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8238879546525!2d103.84558971460535!3d1.2792567621548998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1912878b53cf%3A0x53065b0b79e3b316!2s180%20Cecil%20St%2C%2010%2001%20Bangkok%20Bank%20Building%2C%20Singapore%20069546!5e0!3m2!1sen!2sin!4v1629464764319!5m2!1sen!2sin"
-              width={screenSmall ? "500px" : "683px"}
-              height="500px"
+              width={screenSmall ? "300px" : "683px"}
+              height={screenSmall ? "300px" : "500px"}
               frameborder="0"
               allowfullscreen=""
             ></iframe>
           </Grid>
           <Grid
             key={1}
-            xs={screenSmall ? 12 : 6}
+            xs={12}
+            md={6}
+            lg={6}
             justify="center"
             alignItems="center"
             item

@@ -23,6 +23,9 @@ import SwipeableViews from "react-swipeable-views";
 const useStyles = makeStyles((theme) => ({
   scroll: {
     height: "50vh",
+    [theme.breakpoints.down("sm")]: {
+      width: "300px",
+    },
     width: "600px",
   },
   tableHead: {
@@ -39,7 +42,7 @@ export default function KnowledgeSharing(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const getTabClass = (isActive) => {
     return isActive ? clsx(classes.tab, classes.activeTab) : classes.tab;
   };
@@ -61,7 +64,7 @@ export default function KnowledgeSharing(props) {
       <Box display="flex">
         <Box
           style={{
-            width: "400px",
+            width: screenSmall ? "150px" : "400px",
             alignItems: "center",
             fontSize: "12px",
             justifyContent: "center",
@@ -82,7 +85,7 @@ export default function KnowledgeSharing(props) {
         <Box>
           <Typography
             style={{
-              width: "200px",
+              width: screenSmall ? "130px" : "200px",
               fontSize: "12px",
               alignItems: "center",
               justifyContent: "center",
@@ -100,7 +103,7 @@ export default function KnowledgeSharing(props) {
       <Box
         style={{
           marginLeft: "50%",
-          marginTop: screenSmall ? "20%" : "14%",
+          marginTop: screenSmall ? "60%" : "14%",
           backgroundColor: "#ffffff",
           transform: "translate(-50%, -50%)",
         }}

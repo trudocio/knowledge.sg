@@ -13,7 +13,7 @@ import {
   CardMedia,
   Hidden,
 } from "@material-ui/core";
-import { shadows } from '@material-ui/system';
+import { shadows } from "@material-ui/system";
 // Internal Imports
 import { Calculators, HeroImage } from "../../UI";
 
@@ -39,7 +39,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "7px",
     border: "1px solid #225A41;",
     textAlign: "center",
-    height:"250px"
+    [theme.breakpoints.up("md")]: {
+      height: "250px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "10px",
+      width: "300px",
+    },
   },
   heading: {
     display: "flex",
@@ -155,7 +161,6 @@ export default function Products(props) {
               ? { marginTop: "0px" }
               : { marginTop: "-200px" }
           }
-          spacing={3}
         >
           <Grid
             key={1}
@@ -169,7 +174,7 @@ export default function Products(props) {
             xs={12}
             justify="center"
             alignItems="center"
-            spacing={8}
+            spacing={useMediaQuery(theme.breakpoints.down("sm")) ? 2 : 8}
             container
           >
             {heroDetails().map((value, idx) => {
@@ -206,29 +211,37 @@ export default function Products(props) {
             part to be integral to digitalizing the international trading
             ecosystem in Singapore with a venture into TradeTech.
           </Typography>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} lg={6}>
             <Box boxShadow={5} className={classes.paper}>
               <Typography className={classes.heading}>TRADING</Typography>
               Knowledge International Strategy Systems (KISS) was incorporated
               with a view to build on the Knowledge Group’s knowledge,
               resources, and network in coal business and to leverage
               Singapore’s pro-business policies and deep financial, trading and
-              shipping ecosystem.<p> As a Global Trader Program (GTP) member trader
-              in Singapore, KISS has benefitted from proximity to Indonesia and
-              Australia as key origination markets as well as key demand markets
-              of India & China.</p>
+              shipping ecosystem.
+              <p>
+                {" "}
+                As a Global Trader Program (GTP) member trader in Singapore,
+                KISS has benefitted from proximity to Indonesia and Australia as
+                key origination markets as well as key demand markets of India &
+                China.
+              </p>
             </Box>
           </Grid>
-          <Grid item xs={6}>
-            <Box boxShadow={5}  className={classes.paper}>
+          <Grid item xs={12} md={6} lg={6}>
+            <Box boxShadow={5} className={classes.paper}>
               <Typography className={classes.heading}>TRADETECH</Typography>
-              With deep insights into trading and logistics and the benefit of experience
-              and network, KISS wants to participate in the Singapore
+              With deep insights into trading and logistics and the benefit of
+              experience and network, KISS wants to participate in the Singapore
               government’s push towards a “Smart Nation” by contributing in its
               area of expertise. We believe SME space can be a big contributor
-              to this agenda by playing its part as “Digital Leaders”.<p>Enabling SMEs to lead digital transformation to propel the ‘Smart
-              Nation’ agenda by creating an open, customizable, interconnected,
-              and interoperable solution for trade digitalization.</p>
+              to this agenda by playing its part as “Digital Leaders”.
+              <p>
+                Enabling SMEs to lead digital transformation to propel the
+                ‘Smart Nation’ agenda by creating an open, customizable,
+                interconnected, and interoperable solution for trade
+                digitalization.
+              </p>
             </Box>
           </Grid>
         </Grid>

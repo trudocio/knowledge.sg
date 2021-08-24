@@ -152,11 +152,11 @@ export default function AboutUsExtended(props) {
                       : classes.heading
                   }
                 >
-                  OUR FOOTPRINT
+                  OUR BUSINESS
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Presence />
+                <Business />
               </AccordionDetails>
             </Accordion>
             <Accordion
@@ -176,11 +176,11 @@ export default function AboutUsExtended(props) {
                       : classes.heading
                   }
                 >
-                  OUR BUSINESS
+                  OUR FOOTPRINT
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Business />
+                <Presence />
               </AccordionDetails>
             </Accordion>
             {/* <Accordion

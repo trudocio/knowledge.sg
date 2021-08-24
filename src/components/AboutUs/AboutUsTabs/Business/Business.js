@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   strengthImageBlock: {
     display: "flex",
     justifyContent: "center",
+    marginBottom: "20px",
   },
   ImageBlock: {
     minWidth: "100px",
@@ -218,7 +219,9 @@ export default function Business(props) {
           <Grid key={0} xs={12} justify="center" container>
             <Grid
               key={0}
-              xs={3}
+              xs={12}
+              md={3}
+              lg={3}
               className={classes.ImageBlock}
               justify="center"
               alignItems="center"
@@ -257,7 +260,9 @@ export default function Business(props) {
             </Grid>
             <Grid
               key={0}
-              xs={3}
+              xs={12}
+              md={3}
+              lg={3}
               className={classes.ImageBlock}
               justify="center"
               alignItems="center"
@@ -296,7 +301,9 @@ export default function Business(props) {
             </Grid>
             <Grid
               key={0}
-              xs={3}
+              xs={12}
+              md={3}
+              lg={3}
               className={classes.ImageBlock}
               justify="center"
               alignItems="center"
@@ -336,7 +343,9 @@ export default function Business(props) {
             </Grid>
             <Grid
               key={0}
-              xs={3}
+              xs={12}
+              md={3}
+              lg={3}
               className={classes.ImageBlock}
               justify="center"
               alignItems="center"
@@ -369,8 +378,8 @@ export default function Business(props) {
                   component="p"
                   align="center"
                 >
-                  Digitalising the international trading ecosystem
-                  with a venture into Trade Tech
+                  Digitalising the international trading ecosystem with a
+                  venture into Trade Tech
                 </Typography>
               </Grid>
             </Grid>

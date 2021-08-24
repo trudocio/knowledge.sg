@@ -11,7 +11,13 @@ import { Calculators, HeroImage, LinedText } from "../../UI";
 // Image Imports
 import shipyard from "../../assets/aboutUs/csr.png";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "-60px",
+    },
+  },
+}));
 
 const tabDetails = () => {
   return [
@@ -103,7 +109,7 @@ export default function Csr(props) {
 
   return (
     <React.Fragment>
-      <Container>
+      <Container className={classes.root}>
         <Grid container justify="center" alignItems="center" spacing={3}>
           <img
             src={shipyard}

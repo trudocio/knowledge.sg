@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import clsx from "clsx";
 
 // Material Imports
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useMediaQuery } from "@material-ui/core";
 import { Button, Grid, IconButton, Box } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -43,6 +44,17 @@ const useStyles = makeStyles((theme) => ({
     outline: "none",
     padding: theme.spacing(2, 4, 3),
   },
+  paperSmall: {
+    backgroundColor: "#ffffff",
+    borderRadius: "8px",
+    outline: "none",
+    height: "500px",
+    width: "300px",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "auto",
+    padding: theme.spacing(2, 3, 3),
+  },
   innerModal: {
     display: "flex",
     justifyContent: "space-around",
@@ -60,7 +72,23 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffffff",
     fontSize: "20px",
   },
+  buttonSmall: {
+    width: "200px",
+    height: "50px",
+    alignItems: "center",
+    marginLeft: "50%",
+    marginTop: "40px",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "#225A41",
+  },
+  buttonTextSmall: {
+    color: "#ffffff",
+    fontSize: "16px",
+  },
   input: {
+    [theme.breakpoints.down("sm")]: {
+      width: "250px",
+    },
     width: "569px",
     "&:before": {
       borderColor: "#225A41",
@@ -77,6 +105,9 @@ const useStyles = makeStyles((theme) => ({
       borderColor: "#225A41",
       backgroundColor: "#ffffff",
     },
+    [theme.breakpoints.down("sm")]: {
+      width: "250px",
+    },
     width: "569px",
   },
   selectInner: {
@@ -92,7 +123,30 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "orange",
       },
     },
-    width: "200px",
+    [theme.breakpoints.down("sm")]: {
+      width: "250px",
+      marginBottom: "20px",
+    },
+    width: "569px",
+    marginRight: "20px",
+  },
+  selectInnerQuant: {
+    "&:before": {
+      borderColor: "#225A41",
+    },
+    "&:after": {
+      borderColor: "#225A41",
+      backgroundColor: "#ffffff",
+    },
+    root: {
+      "&$selected": {
+        backgroundColor: "orange",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "250px",
+    },
+    width: "569px",
     marginRight: "20px",
   },
   root: {
@@ -153,6 +207,7 @@ const useOutlinedInputStyles = makeStyles((theme) => ({
 }));
 export default function Calculators(props) {
   const { key } = props;
+  const theme = useTheme();
   const classes = useStyles();
   const outlinedInputClasses = useOutlinedInputStyles();
   const [open, setOpen] = React.useState(false);
@@ -161,6 +216,7 @@ export default function Calculators(props) {
   const handleChange = (event) => {
     setProducts(event.target.value);
   };
+  const screenSmall = useMediaQuery(theme.breakpoints.down("md"));
   const to2dp = (obj) => {
     var str = String(obj);
     var index = str.indexOf(".");
@@ -388,6 +444,7 @@ export default function Calculators(props) {
           </div>
         </Fade>
       </Modal>
+
       <Modal
         className={classes.modal}
         open={open}
@@ -399,7 +456,7 @@ export default function Calculators(props) {
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
+          <div className={screenSmall ? classes.paperSmall : classes.paper}>
             <div
               style={{
                 display: "flex",
@@ -495,7 +552,7 @@ export default function Calculators(props) {
                 </Select>
               </FormControl>
               <TextField
-                className={classes.selectInner}
+                className={classes.selectInnerQuant}
                 id="outlined-basic"
                 label="QUANTITY"
                 variant="outlined"
@@ -511,7 +568,11 @@ export default function Calculators(props) {
             </form>
             <Button
               onClick={handleSubmit}
-              className={clsx(classes.buttonText, classes.button)}
+              className={
+                screenSmall
+                  ? clsx(classes.buttonTextSmall, classes.buttonSmall)
+                  : clsx(classes.buttonText, classes.button)
+              }
             >
               SUBMIT REQUEST
             </Button>

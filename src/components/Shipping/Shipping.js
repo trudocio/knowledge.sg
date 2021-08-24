@@ -3,7 +3,7 @@ import React from "react";
 
 // Material Imports
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Container, Typography, div } from "@material-ui/core";
+import { Grid, Container, Typography, div, Box } from "@material-ui/core";
 
 // Internal Imports
 import { Calculators, HeroImage, LinedText } from "../../UI";
@@ -13,6 +13,9 @@ import shipyard from "../../assets/products/Shipping.png";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    [theme.breakpoints.down("sm")]: {
+      height: "150px",
+    },
     height: "111px",
     display: "flex",
     fontFamily: "Poppins",
@@ -25,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "7px",
     border: "1px solid #225A41;",
     textAlign: "center",
+  },
+  root: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "-60px",
+    },
   },
 }));
 
@@ -85,7 +93,7 @@ export default function Shipping(props) {
 
   return (
     <React.Fragment>
-      <Container>
+      <Container className={classes.root}>
         <Grid container justify="center" alignItems="center" spacing={3}>
           <img
             src={shipyard}
@@ -108,41 +116,41 @@ export default function Shipping(props) {
             container
             spacing={3}
           >
-            <Grid item xs={3}>
-              <div className={classes.paper}>
+            <Grid item xs={12} md={3} lg={3}>
+              <Box boxShadow={5} className={classes.paper}>
                 Excellent credentials in the chartering market - Over 300
                 vessels handled
-              </div>
+              </Box>
             </Grid>
-            <Grid item xs={3}>
-              <div className={classes.paper}>
+            <Grid item xs={12} md={3} lg={3}>
+              <Box boxShadow={5} className={classes.paper}>
                 Longstanding relationships with all major vessel owners and
                 operators
-              </div>
+              </Box>
             </Grid>
-            <Grid item xs={3}>
-              <div className={classes.paper}>
+            <Grid item xs={12} md={3} lg={3}>
+              <Box boxShadow={5} className={classes.paper}>
                 Bulk and Containerized freight expertise
-              </div>
+              </Box>
             </Grid>
-            <Grid item xs={3}>
-              <div className={classes.paper}>
+            <Grid item xs={12} md={3} lg={3}>
+              <Box boxShadow={5} className={classes.paper}>
                 Capacity to organize storage of high value cargoes in custom
                 bonded areas within the port areas.
-              </div>
+              </Box>
             </Grid>
-            <Grid item xs={6}>
-              <div className={classes.paper}>
+            <Grid item xs={12} md={6} lg={6}>
+              <Box boxShadow={5} className={classes.paper}>
                 Last mile connectivity outside port limits to enable delivery of
                 material right at the user’s/buyer’s warehouse or plant.
-              </div>
+              </Box>
             </Grid>
-            <Grid item xs={6}>
-              <div className={classes.paper}>
+            <Grid item xs={12} md={6} lg={6}>
+              <Box boxShadow={5} className={classes.paper}>
                 Longstanding and excellent relationships with landside service
                 providers like Custom House Agents, Rail and Road Transport, and
                 Warehousing in port areas.
-              </div>
+              </Box>
             </Grid>
           </Grid>
           <Calculators key={2} />

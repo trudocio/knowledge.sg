@@ -119,6 +119,12 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 20000,
     height: "137.94px",
   },
+  logoMobile: {
+    width: "100px",
+    zIndex: 20000,
+    height: "47px",
+    marginTop: "20px",
+  },
   inlineHeading: {
     fontSize: "15px",
     color: "#292828",
@@ -320,23 +326,30 @@ export function NavBar(props) {
             </IconButton>
             <Box display="flex" justifyContent="center" alignItems="center">
               <img
-                className={classes.logoSmall}
+                className={classes.logoMobile}
                 src={logo}
                 alt="Knowledge Global Singapore Logo"
               />
             </Box>
+            <Typography
+              className={classes.titleDetail}
+              variant="h5"
+              align="center"
+            >
+              KISSPL
+            </Typography>
           </Hidden>
-          <Hidden mdUp implementation="css">
+          {/* <Hidden mdUp implementation="css">
             <Toolbar className={classes.toolbar}>
               <Typography
                 className={classes.titleDetail}
                 variant="h5"
                 align="center"
               >
-                KNOWLEDGE INTERNATIONAL STRATEGY SYSTEMS PTE. LTD.
+                KISSPL
               </Typography>
             </Toolbar>
-          </Hidden>
+          </Hidden> */}
           {screenMedium && (
             <Box>
               <IconButton

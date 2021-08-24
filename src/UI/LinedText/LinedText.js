@@ -19,7 +19,6 @@ export default function LinedText(props) {
       container
       justify="center"
       alignItems="center"
-      spacing={3}
     >
     {tabDetails()[value].content.map((val, idx) => {
       return (<Grid

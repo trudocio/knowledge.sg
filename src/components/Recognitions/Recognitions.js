@@ -22,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
     height: "30vh",
     width: "600px",
   },
+  root: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "-60px",
+    },
+  },
   tableHead: {
     color: "#225A41",
     fontWeight: "bold",
@@ -62,7 +67,7 @@ export default function Recognitions(props) {
   const [value, setValue] = React.useState(0);
   const classes = useStyles();
   const theme = useTheme();
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.down("xs"));
   const tabDetails = () => {
     return [
       {
@@ -77,7 +82,7 @@ export default function Recognitions(props) {
                   xs={12}
                   justify="center"
                   alignItems="center"
-                  spacing={3}
+                  spacing={0}
                   style={{ marginTop: "-10px" }}
                   container
                 >
@@ -129,45 +134,37 @@ export default function Recognitions(props) {
   };
   return (
     <React.Fragment>
-      {/* <Container>
-        <Grid container justify="center" alignItems="center" spacing={3}>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <img
-              src={shipyard}
-              style={{ width: "300px", height: "371px", marginRight: "20px" }}
-            />
-            <LinedText key={1} value={value} tabDetails={tabDetails} />
-          </Box>
-          <Calculators key={2} />
-        </Grid>
-      </Container> */}
-      <Container>
+      <Container className={classes.root}>
         <Grid
           container
           direction={screenSmall ? "column" : "row"}
           justify="space-between"
           alignItems="center"
-          spacing={screenSmall ? 0 : 3}
+          spacing={0}
         >
           <Grid
             key={0}
-            xs={screenSmall ? 12 : 6}
+            xs={12}
+            md={6}
+            lg={6}
             justify="center"
             alignItems="center"
             item
           >
             <img
               src={shipyard}
-              style={{ width: "300px", height: "371px", marginLeft: "100px" }}
+              style={{
+                width: "300px",
+                height: "371px",
+                marginLeft: screenSmall ? "0px" : "100px",
+              }}
             />
           </Grid>
           <Grid
             key={1}
-            xs={screenSmall ? 12 : 6}
+            xs={12}
+            md={6}
+            lg={6}
             justify="center"
             alignItems="center"
             item

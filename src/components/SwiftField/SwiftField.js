@@ -30,6 +30,9 @@ import clsx from "clsx";
 import SwipeableViews from "react-swipeable-views";
 const useStyles = makeStyles((theme) => ({
   scroll: {
+    [theme.breakpoints.down("sm")]: {
+      width: "300px",
+    },
     width: "600px",
     height: "32vh",
   },
@@ -60,7 +63,7 @@ export default function SwiftField(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const renderSectionHeader = (item, index) => {
     return (
       <Box
@@ -95,7 +98,7 @@ export default function SwiftField(props) {
       <Box display="flex">
         <Box
           style={{
-            width: "400px",
+            width: screenSmall ? "150px" : "400px",
             alignItems: "center",
             fontSize: "12px",
             justifyContent: "center",
@@ -116,7 +119,7 @@ export default function SwiftField(props) {
         <Box>
           <Typography
             style={{
-              width: "200px",
+              width: screenSmall ? "130px" : "200px",
               fontSize: "12px",
               alignItems: "center",
               justifyContent: "center",
@@ -133,7 +136,7 @@ export default function SwiftField(props) {
     <Box
       style={{
         marginLeft: "50%",
-        marginTop: screenSmall ? "20%" : "9%",
+        marginTop: screenSmall ? "30%" : "9%",
         backgroundColor: "#ffffff",
         transform: "translate(-50%, -50%)",
       }}

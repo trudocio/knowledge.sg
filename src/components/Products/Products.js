@@ -2,8 +2,8 @@
 import React from "react";
 
 // Material Imports
-import { makeStyles } from "@material-ui/core/styles";
-import { Container } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Container, useMediaQuery } from "@material-ui/core";
 import baseMetals from "../../assets/products/baseMetals.png";
 import energy from "../../assets/products/energy.png";
 import minerals from "../../assets/products/minerals.png";
@@ -104,7 +104,8 @@ const tabDetails = () => {
 export default function Products(props) {
   const { children } = props;
   const [value, setValue] = React.useState(0);
-
+  const theme = useTheme();
+  const screenSmall = useMediaQuery(theme.breakpoints.down("md"));
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -117,7 +118,7 @@ export default function Products(props) {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "100px",
+          marginTop: screenSmall ? "-60px" :"100px",
         }}
       >
         <ImageGrid

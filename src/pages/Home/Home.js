@@ -98,7 +98,7 @@ export default function Home(props) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
   const [text, setText] = React.useState("");
-  const screenSmall = useMediaQuery(theme.breakpoints.between("xs", "md"));
+  const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const handleChangeIndex = (index) => {
     setValue(index);
   };
@@ -107,12 +107,12 @@ export default function Home(props) {
     setValue(newValue);
     setText(event);
   };
-
+  // const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <React.Fragment>
       <NavBar value={value} onChange={handleChange} />
       {value === 6 && (
-        <div style={{ marginTop: "220px" }}>
+        <div style={{ paddingTop: "220px" }}>
           <Knowledge></Knowledge>
         </div>
       )}

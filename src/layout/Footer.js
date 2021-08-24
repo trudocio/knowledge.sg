@@ -1,49 +1,67 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import { useMediaQuery } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Call, Place, Email } from "@material-ui/icons";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#1C2325",
-    // paddingTop: theme.spacing.unit * 1,
-    // paddingBottom: theme.spacing.unit * 1,
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "20px",
+    },
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
+    marginLeft: "-40px",
     minHeight: "240px",
-    marginLeft:"-40px",
   },
   footerGrid: {
     height: "100%",
-    minHeight: "240px"
+    minHeight: "240px",
   },
   footerNestedGrid: {
     textAlign: "right",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "100px",
+    },
     minHeight: "150px",
   },
   footerIcon: {
-    fontSize: "64px",
+    fontSize: "30px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "64px",
+    },
     color: "#ffffff",
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   footerText: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "14px",
+      width: "200px",
+    },
     color: "#ffffff",
     fontFamily: "'Poppins', serif",
-    fontStyle: "normal"
-  }
+    fontStyle: "normal",
+  },
 }));
 
 export function Footer(props) {
   const classes = useStyles();
+  const theme = useTheme();
+  const screenSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <footer>
-      <Grid container className={classes.root} spacing={3}>
+      <Grid container className={classes.root} spacing={0}>
         <Grid item xs={12}>
-          <Grid container justify="center" spacing={3}>
-            {[0, 1, 2].map(value => (
+          <Grid
+            container
+            justify={screenSmall ? "flex-start" : "center"}
+            spacing={0}
+          >
+            {[0, 1, 2].map((value) => (
               <Grid key={value} item>
                 <Paper className={classes.root} elevation={0}>
                   {value === 0 ? (

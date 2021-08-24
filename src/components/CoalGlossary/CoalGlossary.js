@@ -14,6 +14,9 @@ import coalDetails from "./coalDetails";
 const useStyles = makeStyles((theme) => ({
   scroll: {
     height: "30vh",
+    [theme.breakpoints.down("sm")]: {
+      width: "200px",
+    },
     width: "600px",
   },
   tableHead: {
@@ -21,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: "bold",
     fontSize: "16px",
+    [theme.breakpoints.down("sm")]: {
+      // marginTop: "100px",
+    },
   },
   container: {
     paddingLeft: "20px",
@@ -43,7 +49,7 @@ export default function CoalGlossary(props) {
       <Box
         style={{
           marginLeft: "50%",
-          marginTop: screenSmall ? "20%" : "9%",
+          marginTop: screenSmall ? "30%" : "9%",
           backgroundColor: "#ffffff",
           transform: "translate(-50%, -50%)",
         }}

@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     maxWidth: '1100px',
     minHeight: "350px",
-    marginTop:"11px",
+    marginTop:"-110px",
+    marginBottom:"20px",
     display: "flex",
     alignItems: "center",
     margin: "auto",
