@@ -82,7 +82,7 @@ export default function Recognitions(props) {
                   xs={12}
                   justify="center"
                   alignItems="center"
-                  spacing={0}
+                  spacing={3}
                   style={{ marginTop: "-10px" }}
                   container
                 >
