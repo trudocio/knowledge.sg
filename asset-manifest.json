@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/knowledge.sg/static/css/main.3cffaad5.chunk.css",
-    "main.js": "/knowledge.sg/static/js/main.cd37e839.chunk.js",
-    "main.js.map": "/knowledge.sg/static/js/main.cd37e839.chunk.js.map",
+    "main.css": "/knowledge.sg/static/css/main.c5cd86cf.chunk.css",
+    "main.js": "/knowledge.sg/static/js/main.ad8671a9.chunk.js",
+    "main.js.map": "/knowledge.sg/static/js/main.ad8671a9.chunk.js.map",
     "runtime-main.js": "/knowledge.sg/static/js/runtime-main.febb43c7.js",
     "runtime-main.js.map": "/knowledge.sg/static/js/runtime-main.febb43c7.js.map",
     "static/css/2.c8c50e7f.chunk.css": "/knowledge.sg/static/css/2.c8c50e7f.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.2eeba198.chunk.js.map": "/knowledge.sg/static/js/2.2eeba198.chunk.js.map",
     "index.html": "/knowledge.sg/index.html",
     "static/css/2.c8c50e7f.chunk.css.map": "/knowledge.sg/static/css/2.c8c50e7f.chunk.css.map",
-    "static/css/main.3cffaad5.chunk.css.map": "/knowledge.sg/static/css/main.3cffaad5.chunk.css.map",
+    "static/css/main.c5cd86cf.chunk.css.map": "/knowledge.sg/static/css/main.c5cd86cf.chunk.css.map",
     "static/js/2.2eeba198.chunk.js.LICENSE.txt": "/knowledge.sg/static/js/2.2eeba198.chunk.js.LICENSE.txt",
     "static/media/BulkShipping.85d296cc.png": "/knowledge.sg/static/media/BulkShipping.85d296cc.png",
     "static/media/BulkTrading.dd34dfd5.png": "/knowledge.sg/static/media/BulkTrading.dd34dfd5.png",
@@ -45,7 +45,7 @@
     "static/js/runtime-main.febb43c7.js",
     "static/css/2.c8c50e7f.chunk.css",
     "static/js/2.2eeba198.chunk.js",
-    "static/css/main.3cffaad5.chunk.css",
-    "static/js/main.cd37e839.chunk.js"
+    "static/css/main.c5cd86cf.chunk.css",
+    "static/js/main.ad8671a9.chunk.js"
   ]
 }
